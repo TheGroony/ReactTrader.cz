@@ -1,0 +1,29 @@
+{
+  "name": "react-trader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sass"
+  },
+  "keywords": [
+    "Journal",
+    "web",
+    "app",
+    "for",
+    "all",
+    "your",
+    "trading",
+    "life",
+    "organization"
+  ],
+  "author": "TheGroony",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.32.8"
+  }
+}
