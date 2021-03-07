@@ -1,6 +1,6 @@
-$bg-background-mobile: "../../assets/mobile-background.png";
-$bg-background-desktop: "../../assets/images/desktop-background.png";
-$bg-screen-leva: "../../assets/images/leva-strana-bg.png";
+$bg-background-mobile: "../assets/mobile-background.png";
+$bg-background-desktop: "../assets/desktop-background.png";
+$bg-screen-leva: "../assets/leva-strana-bg.png";
 
 * {
     margin: 0;
@@ -28,7 +28,7 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
        transition: all 0.75s ease-in-out;
 
        .logo img{
-          margin: -1rem; 
+         width: 10rem;
        }
 
        .logo-header {
@@ -134,7 +134,7 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
                 outline: none;
                 border: none;
                 color: white;
-                background-image: linear-gradient(180deg, #F54EA2 0%, #FF7676 100%);
+                background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
                 border-radius: 30px;
                 &:hover {
                     opacity: 0.9;
@@ -185,26 +185,26 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
     body {
         background-image: url($bg-background-desktop);
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-repeat:no-repeat;
+        background-size:cover;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
     }
     main {
-        box-shadow: 10px 10px 50px 11px rgba(0, 0, 0, 0.25);
-        width: 70%;
-        min-height: 80%;
         display: flex;
+        justify-content: center;
         flex-flow: row wrap;
-        border-radius: 30px;
+        flex: 0 0 70%;
     }
 
     .screen-leva {
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        flex: 1 0 50%;
+        box-shadow: 10px 10px 50px 11px rgba(0, 0, 0, 0.25);
+        //border-top-left-radius: 30px;
+        //border-bottom-left-radius: 30px;
+        border-radius: 30px;
+        flex: 1 1 60%;
         background-image: url($bg-screen-leva);
         background-position: center;
         background-repeat: no-repeat;
@@ -216,8 +216,9 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
            
 
             img {
-                width: 7.5rem;
-                margin: 1rem;
+                width: 6rem;
+                margin: 2rem;
+                text-shadow: 10px 10px;
             }
             .logo-header {
                 color: white;
@@ -226,9 +227,9 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
         }
 
         .desktop-content {
-            margin: 2rem;
+            margin: 7rem;
             display: flex;
-            flex-flow: column wrap;
+            flex-flow: row wrap;
             justify-content: center;
             align-items: center;
             p {
@@ -240,16 +241,18 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
     }
 
     .switchRegistrationColor {
-       transform: translate3d(82%, 0, 0);
-       border-top-left-radius: 0px;
-       border-bottom-left-radius: 0px;
-       border-top-right-radius: 30px;
-       border-bottom-right-radius: 30px;
+       transform: translate3d(70%, 0, 0);
+      // border-top-left-radius: 0px;
+      // border-bottom-left-radius: 0px;
+     // border-top-right-radius: 30px;
+     //  border-bottom-right-radius: 30px;
     }
 
     .screen-prava {
+        border-radius: 30px;
+        box-shadow: 10px 10px 50px 11px rgba(0, 0, 0, 0.25);
         transform: translate3d(0,0,0);
-        flex: 1 0 40%;
+        flex: 1 1 40%;
         background-color: white;
         border-top-right-radius: 30px;
         border-bottom-right-radius: 30px;
@@ -263,7 +266,6 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
         .header {
             font-size: 3rem;
             margin: 2rem;
-            font-weight: bold;
         }
         .loginForm {
             display: inline-block;
@@ -320,7 +322,7 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
             border-radius: 30px;
             color: white;
             transition: all 0.2s;
-            background-image: linear-gradient(180deg, #F54EA2 0%, #FF7676 100%);
+            background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
             &:hover {
                 opacity: 0.9;
                 cursor: pointer;
@@ -344,11 +346,11 @@ $bg-screen-leva: "../../assets/images/leva-strana-bg.png";
     }
 
     .switchRegistrationWhite {
-        transform: translate3d(-122%,0,0);
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
+        transform: translate3d(-145%,0,0);
+       // border-top-left-radius: 30px;
+      //  border-bottom-left-radius: 30px;
+      //  border-top-right-radius: 0px;
+      //  border-bottom-right-radius: 0px;
         .loginHeader {
             display: none;
         }
