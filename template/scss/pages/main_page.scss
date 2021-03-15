@@ -1,0 +1,396 @@
+$bg-background-mobile: "../assets/mainpage-bg-mobile.png";
+$bg-background-desktop: "../assets/mainpage-bg-desktop.png";
+$cloud-start: "../assets/cloud-start.png";
+$cloud-instrumenty: "../assets/cloud-instrumenty.png";
+$cloud-kontakt: "../assets/cloud-kontakt.png";
+$cloud-start-desktop: "../assets/cloud-start-desktop.png";
+$rectangle-textarea: "../assets/rectangle-textarea.png";
+$montserrat: "Montserrat", sans-serif;
+
+
+
+@media only screen and (max-width:600px) {
+
+    
+
+    .mainPage {
+        background-image: url($bg-background-mobile);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .header {
+            display: flex;
+            flex-flow: row nowrap;
+            .logo {
+                flex: 1 0 0;
+                p {
+                    display: none;
+                }
+                img {
+                    width: 3.5rem;
+                    margin: 0.75rem;
+                }
+            }
+            .navbar {
+               display: none;
+            }
+            .navbar-mobile {
+
+                #openMenuBtn {
+                   img {
+                       width: 3rem;
+                       margin: 0.25rem;
+                   }
+                }
+
+                margin: 1rem;
+                .blur {
+                    height: 0;
+                    backdrop-filter: blur(2px);
+                    width: 100%;
+                    position: fixed;
+                    z-index:1;
+                    left: 0;
+                    top: 0;
+                    transition: 0.2s;
+                }
+                .overlay {
+                    #closeMenuBtn {
+                        position: absolute;
+                        top: 15px;
+                        right: 35px;
+                        font-size: 40px;
+                        text-decoration: none;
+                        color: #818181;
+                    }
+                    height: 0;
+                    width: 100%;
+                    position: fixed;
+                    z-index: 2;
+                    left:0;
+                    top:0;
+                    background-color: rgba($color: #f1f1f1, $alpha: 1);
+                    overflow: hidden;
+                    transition: 0.5s;
+
+                    .overlay-content {
+                        display: flex;
+                        flex-flow: column wrap;
+                        align-items: center;
+                        position: relative;
+                        top: 15%;
+                        width: 100%;
+                        text-align: center;
+                        margin-top: 30px;
+                        .loginButton {
+                            width: 60%;
+                            border-radius: 30px;
+                            background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
+                            a {
+                                color: white;
+                            }
+                        }
+                        a {
+                            padding: 8px;
+                            text-decoration: none;
+                            font-size: 20px;
+                            color: #818181;
+                            display: block;
+                            transition: 0.3s;
+                            &:hover {
+                                color: #3EA1DB;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // Section start
+        .start {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            .info {
+                flex: 0 1 80%;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: white;
+                margin-top: 4rem;
+                .before {
+                    font-family: $montserrat;
+                    font-weight: 100;
+                    font-size: 17px;
+                }
+                .mainHeader {
+                    font-family: $montserrat;
+                    font-weight: 600;
+                    font-size: 35px;
+                    margin: 0.5rem;
+                }
+                .description {
+                    font-family: $montserrat;
+                    font-weight: 100;
+                    font-size: 14px;
+                }
+            }
+        .cloud {
+            background-image: url($cloud-start);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            .href {
+                padding: 0.5rem;
+                color: lightblue;
+            }
+            .icons {
+                margin-top: -3rem;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                width: 80%;
+                margin-left: 4rem;
+                .column {
+                    display: flex;
+                    flex-flow: column wrap;
+                    img {
+                        width: 60px;
+                    }
+                }
+            }
+            .text {
+                width: 70%;
+                text-align: center;
+                margin-top: 1rem;
+                margin-left: 6rem;
+                font-size: 12px;
+            }
+        }
+        }
+        // section instrumenty
+        .instrumenty {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin-top: 12rem;
+
+            .info {
+                text-align: center;
+                color: white;
+              .mainHeader {
+                  font-family: $montserrat;
+                  font-weight: 600;
+                  font-size: 25px;
+              }
+              .description {
+                  margin-left: 2rem;
+                  margin-top: 1rem;
+                  font-family: $montserrat;
+                  font-weight: 100;
+                  width: 80%;
+              }
+              .href {
+                  color: lightblue;
+              }
+            }
+
+            .cloud {
+                background-image: url($cloud-instrumenty);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            .undraw img{
+                width: 60%;
+                margin: 1rem;
+            }
+            .text {
+                margin-left: 2rem;
+                margin-top: 2.5rem;
+                width: 40%;
+            }
+            }
+        }
+
+        //section kontakt
+        .kontakt {
+           .info {
+            margin-top: 10rem;
+            margin-bottom: 5rem;
+               color: white;
+               text-align: center;
+               .mainHeader {
+                   margin: 0.5rem;
+                   font-family: $montserrat;
+                   font-weight: 600;
+                   font-size: 30px;
+               }
+               .description {
+                   font-family: $montserrat;
+                   font-weight: 100;
+                   font-size: 14px;
+               }
+           }
+            .cloud {
+                background-image: url($cloud-kontakt);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 50%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                .dotaznik {
+                    margin-top: 3rem;
+                    width: 100%;
+                    .input {
+                        .rectangle {
+                            width: 85%;
+                            padding: 0.5rem;
+                        }
+                        margin: 1rem;
+                        input[type=text] {
+                            width: 80%;
+                            font-size: 15px;
+                            border: none;
+                            outline: none;
+                        }
+                        input[type=submit] {
+                            width: 40%;
+                            padding: 0.5rem;
+                            border-radius: 30px;
+                            border: none;
+                            outline: none;
+                            color: white;
+                            font-size: 15px;
+                            background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
+                            box-shadow: 10px 5px 25px black;
+                        }
+                        textarea {
+                            vertical-align: top;
+                            width: 80%;
+                            font-size: 15px;
+                            padding: 0.5rem;
+                            height: 7rem;
+                            outline: none;
+                            border: none;
+                            background-image: url($rectangle-textarea);
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    
+    .mainPage {
+        background-image: url($bg-background-desktop);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .header {
+            display: flex;
+            padding: 1rem;
+            flex-flow: row nowrap;
+            .logo {
+                flex: 1 0 0;
+                display: flex;
+               align-items: center;
+               p {
+                   padding: 1rem;
+                   color: white;
+                   font-weight: 500;
+                   font-size: 30px;
+               }
+            }
+            .navbar-mobile {
+                display: none;
+            }
+            .navbar {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                a {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    text-decoration: none;
+                    color: white;
+                    padding-right: 2.5rem;
+                    font-weight: 200;
+                }
+                .loginButton {
+                    a {
+                        padding-right: 0;
+                        background-image: linear-gradient(180deg, #5D34EC 0%, #3EA1DB 100%);
+                        padding: 1rem;
+                        text-align: center;
+                        border-radius: 30px;
+                        box-shadow: 3px 6px 7px rgba(0,0,0, 0.25);
+                        margin-right: 2rem;
+                    }
+                }
+
+            }
+        }
+        .start {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            height: 100%;
+            .info {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex: 0 1 50%;
+                color: white;
+                .before {
+                    font-weight: 200;
+                }
+                .mainHeader {
+                    font-weight: 600;
+                    font-size: 50px;
+                }
+                .description {
+                    margin-top: 0.5rem;
+                    font-weight: 200;
+                    width: 40%;
+                }
+            }
+            .cloud {
+                background-image: url($cloud-start-desktop);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: right;
+                display: flex;
+                flex-flow: column nowrap;
+                flex: 0 1 50%;
+                .icons {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 100%;
+                }
+                .text {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 10%;
+                }
+            }
+        }
+    }
+}

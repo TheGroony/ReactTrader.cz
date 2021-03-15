@@ -10,7 +10,7 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
 }
 
 @media only screen and (max-width: 600px) {
-    body {
+    body .login {
        display: flex;
        flex-flow: row wrap;
     }
@@ -182,7 +182,8 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
 }
 
 @media only screen and (min-width:600px) {
-    body {
+    // body s třídou .login
+     .login{
         background-image: url($bg-background-desktop);
         background-position: center;
         background-repeat:no-repeat;

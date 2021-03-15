@@ -1,0 +1,118 @@
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="icon" href="assets/Logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<script src="js/dist/script.js" defer></script>
+    <title>ReactTrader - hlavní stránka</title>
+</head>
+<body class="mainPage">
+    <section class="header">
+        <div class="logo">
+            <img src="./assets/Logo-no-shadow.png" alt="Logo ReactTrader">
+            <p>ReactTrader</p>
+        </div>
+        <div class="navbar">
+            <a href="#">MENU</a>
+            <a href="#">PODPOROVANÉ INSTRUMENTY</a>
+            <a href="#">KONTAKT</a>
+            <div class="loginButton">
+                <a href="#">PŘIHLÁSIT SE</a>
+            </div>
+        </div>
+        <div class="navbar-mobile">
+            <div class="blur"></div>
+            <div class="overlay">
+                <a href="#" id="closeMenuBtn"><i class="fa fa-times"></i></a>
+                <div class="overlay-content">
+                    <a href="#">MENU</a>
+                    <a href="#">PODPOROVANÉ INSTRUMENTY</a>
+                    <a href="#">KONTAKT</a>
+                    <div class="loginButton">
+                        <a href="#">PŘIHLÁSIT SE</a>
+                    </div>
+                </div>
+            </div>
+            <span id="openMenuBtn"><img src="./assets/burger-menu.png" alt=""></span>
+        </div>
+    </section>
+    <section class="start">
+        <div class="info">
+            <p class="before">Veškerá Vaše trading kariéra</p>
+            <p class="mainHeader">Na jednom místě</p>
+            <p class="description">Mějte všechny obchody a myšlenky pod kontrolou díky přehlednému plánu, který máte vždy před sebou.</p>
+        </div>
+        <div class="cloud">
+            <div class="icons">
+                <div class="column">
+                    <img src="./assets/apple.png" alt="">
+                    <img src="./assets/facebook.png" alt="">
+                </div>
+                <div class="column"> 
+                    <img src="./assets/netflix.png" alt="">
+                    <img src="./assets/bitcoin.png" alt="">
+                </div>
+                <div class="column">
+                    <img src="./assets/twitter.png" alt="">
+                    <img src="./assets/tesla.png" alt="">
+                </div>
+                <div class="column">
+                    <img src="./assets/amazon.png" alt="">
+                    <img src="./assets/nio.png" alt="">
+                </div>
+            </div>
+            <div class="text">
+                <p>Veďte si podrobný přehled obchodů nejen těch nejznámějších společností,
+                mějte výsledky trading účtu vždy u sebe, sledujte jeho růst, vylaďte Váš plán a
+                zapište si jakékoliv myšlenky či nápady na obchody, aby Vás trh již nenachytal na leknínech.</p> 
+                <p>Podívejte se na <a href="#" class="href">dostupné instrumenty -></a></p>
+            </div>
+        </div>
+    </section>
+    <section class="instrumenty">
+        <div class="info">
+            <p class="mainHeader">Dostupné instrumenty</p>
+            <p class="description">ReactTrader aktuálně podporuje zápis akcií, opcí, ETF & kryptoměny BTC, do budoucna ovšem přibude více instrumentů</p>
+            <p class="description">Máte dotaz? <a href="#" class="href">Napiště nám -></a></p>
+        </div>
+        <div class="cloud">
+            <div class="undraw">
+                <img src="./assets/undraw-homepage.png" alt="">
+            </div>
+            <div class="text">
+                <p>Nezoufejte, pokud v aplikaci nenajdete svůj používaný instrument, můžete ho zadat manuálně, přece bychom Vás nenechali viset!</p>
+            </div>
+        </div>
+    </section>
+    <section class="kontakt">
+        <div class="info">
+            <p class="mainHeader">Máte dotaz?</p>
+            <p class="description">Zašlete nám zprávu, jednodušší to už není...</p>
+        </div>
+        <div class="cloud">
+            <div class="dotaznik">
+                <form action="">
+                    <div class="input">
+                        <input type="text" placeholder="Vaše jméno">
+                        <img src="./assets/rectangle.png" alt="" class="rectangle">
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Vaše e-mailová adresa">
+                        <img src="./assets/rectangle.png" alt="" class="rectangle">
+                    </div>
+                    <div class="input">
+                        <textarea placeholder="Vaše zpráva"></textarea>
+                    </div>
+                    <div class="input">
+                        <input type="submit" value="ODESLAT">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
