@@ -6,6 +6,7 @@
     <link rel="icon" href="assets/Logo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <script src="js/dist/script.js" defer></script>
     <title>ReactTrader - hlavní stránka</title>
@@ -13,7 +14,7 @@
 <body class="mainPage">
     <section class="header">
         <div class="logo">
-            <img src="./assets/Logo-no-shadow.png" alt="Logo ReactTrader">
+            <img src="assets/Logo-no-shadow.png" alt="Logo ReactTrader">
             <p>ReactTrader</p>
         </div>
         <div class="navbar">
@@ -37,32 +38,35 @@
                     </div>
                 </div>
             </div>
-            <span id="openMenuBtn"><img src="./assets/burger-menu.png" alt=""></span>
+            <span id="openMenuBtn"><img src="assets/burger-menu.png" alt=""></span>
         </div>
     </section>
-    <section class="start">
-        <div class="info">
+    <section class="start" >
+        <div class="info" data-aos="fade-right">
             <p class="before">Veškerá Vaše trading kariéra</p>
             <p class="mainHeader">Na jednom místě</p>
             <p class="description">Mějte všechny obchody a myšlenky pod kontrolou díky přehlednému plánu, který máte vždy před sebou.</p>
         </div>
-        <div class="cloud">
-            <div class="icons">
+        <div class="cloud" data-aos="fade-left">
+            <div class="cloud-image">
+                <img src="assets/cloud-start-desktop.png" alt="">
+            </div>
+            <div class="icons" data-aos="fade-left">
                 <div class="column">
-                    <img src="./assets/apple.png" alt="">
-                    <img src="./assets/facebook.png" alt="">
+                    <img src="assets/apple.png" alt="">
+                    <img src="assets/facebook.png" alt="">
                 </div>
                 <div class="column"> 
-                    <img src="./assets/netflix.png" alt="">
-                    <img src="./assets/bitcoin.png" alt="">
+                    <img src="assets/netflix.png" alt="">
+                    <img src="assets/bitcoin.png" alt="">
                 </div>
                 <div class="column">
-                    <img src="./assets/twitter.png" alt="">
-                    <img src="./assets/tesla.png" alt="">
+                    <img src="assets/twitter.png" alt="">
+                    <img src="assets/tesla.png" alt="">
                 </div>
                 <div class="column">
-                    <img src="./assets/amazon.png" alt="">
-                    <img src="./assets/nio.png" alt="">
+                    <img src="assets/amazon.png" alt="">
+                    <img src="assets/nio.png" alt="">
                 </div>
             </div>
             <div class="text">
@@ -74,38 +78,44 @@
         </div>
     </section>
     <section class="instrumenty">
-        <div class="info">
-            <p class="mainHeader">Dostupné instrumenty</p>
-            <p class="description">ReactTrader aktuálně podporuje zápis akcií, opcí, ETF & kryptoměny BTC, do budoucna ovšem přibude více instrumentů</p>
-            <p class="description">Máte dotaz? <a href="#" class="href">Napiště nám -></a></p>
-        </div>
-        <div class="cloud">
+        <div class="cloud" data-aos="fade-up">
+            <div class="cloud-image">
+                <img src="assets/cloud-instrumenty-desktop.png" alt="">
+            </div>
             <div class="undraw">
-                <img src="./assets/undraw-homepage.png" alt="">
+                <img src="assets/undraw-homepage.png" alt="">
             </div>
             <div class="text">
                 <p>Nezoufejte, pokud v aplikaci nenajdete svůj používaný instrument, můžete ho zadat manuálně, přece bychom Vás nenechali viset!</p>
             </div>
         </div>
+        <div class="info" data-aos="fade-up">
+            <p class="mainHeader" data-aos="fade-up">Dostupné instrumenty</p>
+            <p class="description">ReactTrader aktuálně podporuje zápis akcií, opcí, ETF & kryptoměny BTC, do budoucna ovšem přibude více instrumentů</p>
+            <p class="description">Máte dotaz? <a href="#" class="href">Napiště nám -></a></p>
+        </div>
     </section>
     <section class="kontakt">
-        <div class="info">
+        <div class="info" data-aos="fade-up">
             <p class="mainHeader">Máte dotaz?</p>
             <p class="description">Zašlete nám zprávu, jednodušší to už není...</p>
         </div>
-        <div class="cloud">
-            <div class="dotaznik">
+        <div class="cloud" data-aos="fade-up">
+            <div class="cloud-image">
+                <img src="assets/cloud-kontakt-desktop.png" alt="">
+            </div>
+            <div class="dotaznik" data-aos="fade-up">
                 <form action="">
                     <div class="input">
-                        <input type="text" placeholder="Vaše jméno">
-                        <img src="./assets/rectangle.png" alt="" class="rectangle">
+                        <input type="text" id="name" placeholder="Vaše jméno">
+                        <img src="assets/rectangle.png" alt="" class="rectangle">
                     </div>
                     <div class="input">
-                        <input type="text" placeholder="Vaše e-mailová adresa">
-                        <img src="./assets/rectangle.png" alt="" class="rectangle">
+                        <input type="text" id="email" placeholder="Vaše e-mailová adresa">
+                        <img src="assets/rectangle.png" alt="" class="rectangle">
                     </div>
                     <div class="input">
-                        <textarea placeholder="Vaše zpráva"></textarea>
+                        <textarea placeholder="Vaše zpráva" class="textAreaClass"></textarea>
                     </div>
                     <div class="input">
                         <input type="submit" value="ODESLAT">
@@ -114,5 +124,10 @@
             </div>
         </div>
     </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

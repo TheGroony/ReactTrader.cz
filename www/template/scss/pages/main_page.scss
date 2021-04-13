@@ -4,14 +4,16 @@ $cloud-start: "../assets/cloud-start.png";
 $cloud-instrumenty: "../assets/cloud-instrumenty.png";
 $cloud-kontakt: "../assets/cloud-kontakt.png";
 $cloud-start-desktop: "../assets/cloud-start-desktop.png";
+$cloud-instrumenty-desktop: "../assets/cloud-instrumenty-desktop.png";
+$cloud-kontakt-desktop: "../assets/cloud-kontakt-desktop.png";
 $rectangle-textarea: "../assets/rectangle-textarea.png";
+$rectangle-textarea-desktop: "../assets/rectangle-textarea-desktop.png";
 $montserrat: "Montserrat", sans-serif;
 
 
 
 @media only screen and (max-width:600px) {
 
-    
 
     .mainPage {
         background-image: url($bg-background-mobile);
@@ -140,6 +142,9 @@ $montserrat: "Montserrat", sans-serif;
             }
         .cloud {
             background-image: url($cloud-start);
+            .cloud-image {
+                display: none;
+            }
             background-repeat: no-repeat;
             background-size: cover;
             height: 100%;
@@ -211,6 +216,9 @@ $montserrat: "Montserrat", sans-serif;
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
+            .cloud-image {
+                display: none;
+            }
             .undraw img{
                 width: 60%;
                 margin: 1rem;
@@ -243,6 +251,9 @@ $montserrat: "Montserrat", sans-serif;
                }
            }
             .cloud {
+                .cloud-image {
+                    display: none;
+                }
                 background-image: url($cloud-kontakt);
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -256,6 +267,18 @@ $montserrat: "Montserrat", sans-serif;
                     margin-top: 3rem;
                     width: 100%;
                     .input {
+                        label {
+                            margin: 0;
+                            padding: 0;
+                            color: green;
+                            font-size: 1rem;
+                            position: absolute;
+                            bottom: 1rem;
+                            left: 0.5rem;
+                            transform: translate3d(0,0,0);
+                            transition: all 0.2s ease-in-out;
+                            pointer-events: none;
+                        }
                         .rectangle {
                             width: 85%;
                             padding: 0.5rem;
@@ -273,7 +296,7 @@ $montserrat: "Montserrat", sans-serif;
                             border-radius: 30px;
                             border: none;
                             outline: none;
-                            color: white;
+                            color: black;
                             font-size: 15px;
                             background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
                             box-shadow: 10px 5px 25px black;
@@ -298,14 +321,13 @@ $montserrat: "Montserrat", sans-serif;
 }
 
 @media only screen and (min-width: 600px) {
-    
     .mainPage {
         background-image: url($bg-background-desktop);
         background-repeat: no-repeat;
         background-size: cover;
         .header {
             display: flex;
-            padding: 1rem;
+            padding: 1.5rem;
             flex-flow: row nowrap;
             .logo {
                 flex: 1 0 0;
@@ -349,16 +371,19 @@ $montserrat: "Montserrat", sans-serif;
         }
         .start {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row nowrap;
             align-items: center;
             height: 100%;
             .info {
                 display: flex;
-                flex-flow: column wrap;
+                flex-flow: column nowrap;
                 justify-content: flex-start;
                 align-items: flex-start;
                 flex: 0 1 50%;
                 color: white;
+                padding-left: 10rem;
+                padding-bottom: 15rem;
+                width: 100%;
                 .before {
                     font-weight: 200;
                 }
@@ -369,26 +394,201 @@ $montserrat: "Montserrat", sans-serif;
                 .description {
                     margin-top: 0.5rem;
                     font-weight: 200;
-                    width: 40%;
+                    width: 60%;
                 }
             }
             .cloud {
-                background-image: url($cloud-start-desktop);
-                background-repeat: no-repeat;
-                background-size: 100%;
-                background-position: right;
+                position: relative;
+                top: 2rem;
+                height: 100%;
                 display: flex;
-                flex-flow: column nowrap;
+                flex-flow: row nowrap;
                 flex: 0 1 50%;
+                justify-content: flex-end;
+                .cloud-image {
+                    img {
+                        width: 50rem;
+                    }
+                }
                 .icons {
+                    position:absolute;
+                    top: 30%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    width: 100%;
+                    padding-left: 20%;
+                    img {
+                        width: 7vh;
+                    }
+                }
+                .text {
+                    padding-left: 5%;
+                    display: flex;
+                    font-weight: 200;
+                    height: 20%;
+                    flex-flow: row wrap;
+                    width: 60%;
+                    position: absolute;
+                    top: 45%;
+                    left: 30%;
+                    .href {
+                        color: lightblue;
+                    }
+                }
+            }
+        }
+        .instrumenty {
+            display: flex;
+            flex-flow: row nowrap;
+            height: 100%;
+            .cloud {
+                flex: 1 0 50%;
+                position: relative;
+                top: 10%;
+                display: flex;
+                flex-flow: column wrap;
+                height: 100%;
+                .cloud-image {
+                    img {
+                        width: 55rem;
+                    }
+                }
+                .undraw {
+                    img {
+                        width: 45%;
+                        position: absolute;
+                        top: 20%;
+                        left: 10%;
+                    }
+                }
+                .text {
+                    width: 50%;
+                    position: absolute;
+                    top: 55%;
+                    left: 5%;
+                    font-weight: 200;
+                }
+            }
+            .info {
+                display: flex;
+                flex-flow: column wrap;
+                color: white;
+                justify-content: center;
+                align-items: flex-start;
+                position: relative;
+                font-weight: 200;
+                flex: 0 1 40%;
+                .mainHeader {
+                    font-weight: 600;
+                    font-size: 50px;
+                }
+                .description {
+                    margin-top: 1rem;
+                    font-weight: 200;
+                    width: 50%;
+                    .href {
+                        color: lightblue;
+                    }
+                }
+            }
+        }
+        .kontakt {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-flow: column nowrap;
+            height: 100%;
+            .info {
+                color: white;
+                flex: 1 0 30%;
+                text-align: center;
+                padding-top: 2.5rem;
+                display: flex;
+                flex-flow: column wrap;
+                .mainHeader {
+                    font-weight: 600;
+                    font-size: 50px;
+                }
+                .description {
+                    font-weight: 200;
+                }
+            }
+            .cloud {
+                display: flex;
+                flex-flow: row nowrap;
+                flex: 0 1 70%;
+                width: 100%;
+                align-items: flex-end;
+                justify-content: center;
+                .cloud-image {
                     display: flex;
                     flex-flow: row wrap;
                     width: 100%;
+                    img {
+                        min-width: 100%;
+                        min-height: 100%;
+                    }
                 }
-                .text {
-                    display: flex;
-                    flex-flow: row wrap;
-                    width: 10%;
+                .dotaznik {
+                    position: absolute;
+                   width: 40%;
+
+                   display: flex;
+                   flex: 0 1 30%;
+                   flex-flow: row wrap;
+                   align-items: center;
+                   justify-content: center;
+                    form {
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        flex-flow: column wrap;
+                        justify-content: center;
+                        align-items: center;
+                        .input {
+                            margin: 1rem;
+                            display: flex;
+                            flex-flow: column wrap;
+                            width: 80%;
+                            align-items: center;
+                            .rectangle {
+                                padding-top: 0.5rem;
+                                width: 100%;
+                            }
+                            input[type=text] {
+                                width: 100%;
+                                font-size: 1.5rem;
+                                outline: none;
+                                border: none;
+                            }
+                            .textAreaClass {
+                                padding: 1rem;
+                               resize: none;
+                               height: 15rem;
+                               width: 100%;
+                               outline: none;
+                               font-size: 1.5rem;
+                               background-image: url($rectangle-textarea-desktop);
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                            }
+                            input[type=submit] {
+                                padding: 0.5rem;
+                                width: 12.5rem;
+                                margin-bottom: 1rem;
+                                margin-top: 0;
+                                height: 3rem;
+                                border-radius: 30px;
+                                border: none;
+                                outline: none;
+                                color: white;
+                                font-size: 15px;
+                                background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
+                                box-shadow: 10px 5px 25px black;
+                            }
+                        }
+                    }
                 }
             }
         }

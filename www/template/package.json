@@ -21,6 +21,7 @@
   "author": "TheGroony",
   "license": "ISC",
   "dependencies": {
+    "aos": "^2.3.4",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
