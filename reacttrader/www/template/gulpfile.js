@@ -1,6 +1,8 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
+const concat = require("gulp-concat");
+const rename = require("gulp-rename");
 
 gulp.task("sass", function(done) {
     gulp.src("scss/app.scss")
@@ -11,8 +13,8 @@ gulp.task("sass", function(done) {
 
 gulp.task("javascript", function(done) {
     gulp.src("js/*.js")
-    .pipe(uglify())
-    .pipe(gulp.dest("js/dist"))
+        .pipe(uglify())
+        .pipe(gulp.dest("js/dist"))
     done();
 });
 

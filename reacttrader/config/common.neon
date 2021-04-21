@@ -19,3 +19,18 @@ di:
 
 services:
 	- App\Router\RouterFactory::createRouter
+	authenticator: App\Models\Security\DatabaseAuthenticator
+
+extensions:
+    autoDI: Fmasa\AutoDI\DI\AutoDIExtension
+    nextras.orm: Nextras\Orm\Bridges\NetteDI\OrmExtension
+    nextras.dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
+
+autoDI:
+    services:
+        - implement: App\Components\Forms\I*Factory
+        - implement: App\Components\Parts\I*Factory
+
+nextras.orm:
+    model: App\Orm\Orm
+

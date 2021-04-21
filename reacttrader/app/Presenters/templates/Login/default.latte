@@ -1,0 +1,31 @@
+{block content}
+    <div class="login">
+    <main>
+        <section class="screen-leva">
+            <div class="logo">
+                <img src="{$basePath}/template/assets/Logo.png" alt="logo ReactTrader" class="img-logo">
+                <p class="logo-header">ReactTrader</p>
+            </div>
+            <div class="desktop-content">
+                <img src="{$basePath}/template/assets/undraw.png" alt="undraw image" class="undraw">
+                <p>Včechny Vaše obchody na jednom místě. Tohle je produktivita.</p>
+            </div>
+        </section>
+        <section class="mobile-clouds">
+            <img src="{$basePath}/template/assets/cloud-divider.png" alt="clouds divider">
+        </section>
+        <section class="screen-prava">
+            <p class="header loginHeader">Přihlášení</p>
+            <p class="header registerHeader">Registrace</p>
+            <!-- FORMS -->
+            {control loginForm}
+            {control registerForm}
+            <!-- END FORMS -->
+            <p class="footer loginHeader">Nemáte účet? <span class="register">Zaregistrovat se.</span></p>
+            <p class="footer registerHeader">Již máte účet? <span class="register">Přihlásit se.</span></p>
+        </section>
+    </main>
+    </div>
+    {*JS pro tuto stránku*}
+    <script src="{$basePath}/template/js/dist/homepage-login.js"></script>
+{/block}

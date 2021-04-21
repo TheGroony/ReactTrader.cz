@@ -10,7 +10,7 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
 }
 
 @media only screen and (max-width: 600px) {
-    body .login {
+     .login {
        display: flex;
        flex-flow: row wrap;
     }
@@ -20,7 +20,7 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
        background-position: center;
        background-repeat: no-repeat;
        background-size: cover;
-       height: 50%;
+       height: 50vh;
        display: flex;
        flex-flow: row wrap;
        justify-content: center;
@@ -54,12 +54,12 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
     }
 
     .registerCloud{
-        transform: rotate(180deg);
+        transform: rotate(180deg) translate3d(0, -160%, 0);
         bottom: -5%;
      }
 
     .switchRegistrationColor {
-        transform: translate3d(0, 101%, 0);
+        transform: translate3d(0, 150%, 0);
         
      }
   
@@ -156,7 +156,7 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
     }
 
     .switchRegistrationWhite {
-        transform: translate3d(0,-90%,0);
+        transform: translate3d(0,-70%,0);
         background-color: white;
         .loginHeader {
             display: none;
@@ -182,12 +182,14 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
 }
 
 @media only screen and (min-width:600px) {
-    // body s třídou .login
+    // hlavní div s třídou .login
      .login{
         background-image: url($bg-background-desktop);
         background-position: center;
         background-repeat:no-repeat;
-        background-size:cover;
+        background-size:100% 100%;
+         width: 100%;
+         min-height: 100vh;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -196,8 +198,9 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
     main {
         display: flex;
         justify-content: center;
-        flex-flow: row wrap;
-        flex: 0 0 70%;
+        flex-flow: row nowrap;
+        flex: 0 1 70%;
+        height: 90vh;
     }
 
     .screen-leva {
@@ -214,7 +217,7 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
         .logo {
             display: flex;
             align-items: center;
-           
+
 
             img {
                 width: 6rem;

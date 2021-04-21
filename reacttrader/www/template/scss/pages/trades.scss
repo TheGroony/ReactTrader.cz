@@ -1,0 +1,33 @@
+@import "../parts/main_menu";
+@import "../parts/main_menu_mobile";
+
+@media only screen and (max-width: 600px) {
+  * {
+    font-family: $montserrat;
+    font-weight: 200;
+  }
+  .trades {
+    display: flex;
+    flex-flow: column nowrap;
+    .header {
+      @include main-menu-mobile;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 600px) {
+  * {
+    font-family: $montserrat;
+    font-weight: 200;
+  }
+  .trades {
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $montserrat;
+    font-weight: 200;
+    .header {
+      @include main-menu;
+    }
+  }
+}

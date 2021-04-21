@@ -3,17 +3,32 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<link rel="icon" href="{$basePath}/template/assets/Logo.png">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<title>ReactTrader</title>
+	<link rel="stylesheet" href="{$basePath}/template/css/app.css">
 </head>
-
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
 	{include content}
 
 	{block scripts}
-	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+		<script src="https://nette.github.io/resources/js/3/netteForms.min.js" ></script>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+		{* for AOS *}
+		<script defer>
+			AOS.init();
+		</script>
+		{* for Smoothscroll*}
+		<script>
+			const scroll = new SmoothScroll('a[href*="#"]');
+		</script>
 	{/block}
 </body>
 </html>
