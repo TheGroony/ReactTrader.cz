@@ -1,4 +1,7 @@
 @mixin main-menu {
+  .full-opacity {
+    opacity: 1;
+  }
   background-image: linear-gradient(#3EA1DB, #3485FF);
   display: flex;
   flex-flow: row wrap;
@@ -37,7 +40,9 @@
         width: 35vh;
         background-color: white;
         padding: 1rem;
-        display: none;
+        opacity: 0;
+        transition: opacity 0.1s;
+        display: flex;
         flex-flow: row wrap;
         justify-content: center;
         h2 {

@@ -14,7 +14,7 @@ document.addEventListener("click", function (e) {
         // do nothing
     } else {
         if (opened) {
-            overlayContent.style.display = "none";
+            overlayContent.style.opacity = "0";
             opened = false;
         }
     }
@@ -23,10 +23,10 @@ document.addEventListener("click", function (e) {
 userButton.addEventListener("click", (e) => {
     e.stopPropagation();
     if (!opened) {
-        overlayContent.style.display = "flex";
+        overlayContent.style.opacity = "1";
         opened = true;
     } else {
-        overlayContent.style.display = "none";
+        overlayContent.style.opacity = "0";
         opened = false;
     }
 });
