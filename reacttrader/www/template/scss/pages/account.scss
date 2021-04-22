@@ -12,6 +12,60 @@
     .header {
       @include main-menu-mobile;
     }
+    main {
+      display: flex;
+      flex-flow: column nowrap;
+      .nadpis {
+        text-align: center;
+        padding: 2rem;
+      }
+      .content {
+        display: flex;
+        flex-flow: column nowrap;
+        .firstHalf {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          .left {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            text-align: center;
+            .image {
+              font-size: 10vh;
+              padding: 1rem;
+            }
+            .userInfo {
+              h3, p {
+                padding: 0.5rem;
+              }
+            }
+          }
+          .right {
+            margin-top: 2rem;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            text-align: center;
+            .liquidity {
+
+            }
+            .growth {
+              padding: 1rem;
+              display: flex;
+              flex-flow: row nowrap;
+              &>div {
+                padding: 0.5rem;
+              }
+            }
+          }
+        }
+        .secondHalf {
+
+        }
+      }
+    }
   }
 }
 
@@ -28,6 +82,82 @@
     font-weight: 200;
     .header {
       @include main-menu;
+    }
+    main {
+      display: flex;
+      flex-flow: column nowrap;
+      .nadpis {
+        text-align: center;
+        padding: 2rem;
+      }
+      .content {
+        padding: 1.5rem;
+        display: flex;
+        flex-flow: column nowrap;
+        .firstHalf {
+          display: flex;
+          flex-flow: row wrap;
+          flex: 0 1 50%;
+          .left {
+            flex: 0 1 50%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            .image {
+              font-size: 20vh;
+              padding: 2rem;
+            }
+            .userInfo {
+              h3 {
+                padding: 0.5rem;
+              }
+              p {
+                padding: 0.5rem;
+              }
+            }
+          }
+
+          .right {
+            text-align: center;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            flex: 0 1 50%;
+            .liquidity {
+              h1 {
+                padding: 0.5rem;
+              }
+            }
+            .growth {
+              display: flex;
+              flex-flow: row wrap;
+              .month {
+                p {
+                  font-size: 20px;
+                }
+                padding: 0.5rem;
+                .timerange {
+                  font-size: 15px;
+                }
+              }
+              .year {
+                p {
+                  font-size: 20px;
+                }
+                padding: 0.5rem;
+                .timerange {
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+        }
+
+        .secondHalf {
+          flex: 0 1 50%;
+        }
+      }
     }
   }
 }

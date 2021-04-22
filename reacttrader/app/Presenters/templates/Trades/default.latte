@@ -2,7 +2,188 @@
     <div class="trades">
         {control mainMenu}
         <main>
-            <h1>Trades</h1>
+            <div class="nadpis">
+                <h1>OBCHODY</h1>
+            </div>
+            <div class="content">
+                <div class="input-container">
+                    <div class="stocks">
+                        <label for="apple">
+                            <input type="radio" name="stock" id="apple">
+                            <img src="{$basePath}/template/assets/apple.png" alt="">
+                        </label>
+                        <label for="facebook">
+                            <input type="radio" name="stock" id="facebook">
+                            <img src="{$basePath}/template/assets/facebook.png" alt="">
+
+                        </label>
+                        <label for="netflix">
+                            <input type="radio" name="stock" id="netflix">
+                            <img src="{$basePath}/template/assets/netflix.png" alt="">
+                        </label>
+                        <label for="twitter">
+                            <input type="radio" name="stock" id="twitter">
+                            <img src="{$basePath}/template/assets/twitter.png" alt="">
+                        </label>
+                        <label for="amazon">
+                            <input type="radio" name="stock" id="amazon">
+                            <img src="{$basePath}/template/assets/amazon.png" alt="">
+                        </label>
+                        <label for="tesla">
+                            <input type="radio" name="stock" id="tesla">
+                            <img src="{$basePath}/template/assets/tesla.png" alt="">
+                        </label>
+                        <label for="nio">
+                            <input type="radio" name="stock" id="nio">
+                            <img src="{$basePath}/template/assets/nio.png" alt="">
+                        </label>
+                        <label for="own">
+                            <input type="radio" name="stock" id="own">
+                            <img src="{$basePath}/template/assets/plus.png" alt="">
+                        </label>
+                    </div>
+                    <div class="input">
+                        <div class="input-rectangle">
+                            <form action="" class="doneTrade">
+                                <input type="text" placeholder="TICKER" class="tickerInput">
+                                <input type="text" placeholder="OD" onfocus="(this.type='date')" class="fromInput">
+                                <input type="text" placeholder="DO" onfocus="(this.type='date')" class="tillInput">
+                                <button type="button" class="direction">LONG</button>
+                                <div class="hidden">
+                                    <input type="checkbox" id="hiddenDirectionInput" name="direction"> {* long nebo short*}
+                                </div>
+                                <select name="strategy" id=""> {* strategie*}
+                                    <option value="Debit spread">Debit spread</option>
+                                    <option value="Credit spread">Credit spread</option>
+                                </select>
+                                <input type="number" placeholder="MAX PROFIT" class="maxProfit">
+                                <input type="number" placeholder="MAX LOSS" class="maxLoss">
+                                <input type="number" placeholder="IV" class="openingIv">
+                                <input type="number" placeholder="CLOSE IV" class="closingIv">
+                                <input type="number" placeholder="P/L" class="realisedPl">
+                                <input type="submit" value="->">
+                            </form>
+                            <form action="" class="openTrade">
+                                <input type="text" placeholder="TICKER" class="tickerInput">
+                                <input type="text" placeholder="OD" onfocus="(this.type='date')" class="fromInput">
+                                <input type="checkbox"> {* long nebo short*}
+                                <select name="strategy" id=""> {* strategie*}
+                                    <option value="Debit spread">Debit spread</option>
+                                    <option value="Credit spread">Credit spread</option>
+                                </select>
+                                <input type="number" placeholder="MAX PROFIT">
+                                <input type="number" placeholder="MAX LOSS">
+                                <input type="number" placeholder="IV">
+                                <input type="submit" value="->">
+                            </form>
+                            <form action="" class="accountDeposit">
+                                <input type="text" placeholder="Název depozitu">
+                                <input type="date" placeholder="DATUM">
+                                <input type="number" placeholder="ČÁSTKA ($)">
+                                <input type="submit" value="->">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="input-type">
+                        <div class="volba">
+                            <label for="doneTrade">Uzavřený obchod</label>
+                            <input type="radio" name="type" id="doneTrade" checked>
+                        </div>
+                        <div class="volba">
+                            <label for="openTrade">Otevřený obchod</label>
+                            <input type="radio" name="type" id="openTrade">
+                        </div>
+                        <div class="volba">
+                            <label for="accountDeposit">Vklad/výběr</label>
+                            <input type="radio" name="type" id="accountDeposit">
+                        </div>
+                    </div>
+                </div>
+                <div class="trade-table">
+                    <table>
+                        <tr>
+                            <th>Stav</th>
+                            <th>Ticker</th>
+                            <th>Otevření</th>
+                            <th>Uzavření</th>
+                            <th>Směr</th>
+                            <th>Strategie</th>
+                            <th>Opening cena</th>
+                            <th>Opening IV </th>
+                            <th>Closing cena</th>
+                            <th>Closing IV</th>
+                            <th>Max P/L</th>
+                            <th>P/L</th>
+                            <th>POP</th>
+                            <th>Pohyb portfolia</th>
+                        </tr>
+                        <tr>
+                            <td><div class="status open">Otevřený</div></td>
+                            <td><div class="ticker-logo"><img src="{$basePath}/template/assets/apple.png" alt=""><p>(AAPL)</p></div></td>
+                            <td>11.4.2019</td>
+                            <td>-</td>
+                            <td><div class="direction long">Long</div></td>
+                            <td><div class="strategy">Credit spread</div></td>
+                            <td>0.71</td>
+                            <td>71</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>120/354</td>
+                            <td>-</td>
+                            <td>76%</td>
+                            <td style="color:yellowgreen">+6 %</td>
+                        </tr>
+                        <tr>
+                            <td><div class="status win">Zisk</div></td>
+                            <td><div class="ticker-logo"> <img src="{$basePath}/template/assets/facebook.png" alt=""><p>(FB)</p></div></td>
+                            <td>11.4.2019</td>
+                            <td>22.5.2019</td>
+                            <td><div class="direction short">Short</div></td>
+                            <td><div class="strategy">Debit spread</div></td>
+                            <td>0.61</td>
+                            <td>61</td>
+                            <td>0.51</td>
+                            <td>51</td>
+                            <td>79/120</td>
+                            <td style="color:yellowgreen">51 $</td>
+                            <td>81%</td>
+                            <td style="color:yellowgreen">+2 %</td>
+                        </tr>
+                        <tr>
+                            <td><div class="status open">Otevřený</div></td>
+                            <td><div class="ticker-logo"><img src="{$basePath}/template/assets/apple.png" alt=""><p>(AAPL)</p></div></td>
+                            <td>11.4.2019</td>
+                            <td>-</td>
+                            <td><div class="direction long">Long</div></td>
+                            <td><div class="strategy">Credit spread</div></td>
+                            <td>0.71</td>
+                            <td>71</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>120/354</td>
+                            <td>-</td>
+                            <td>76%</td>
+                            <td style="color:yellowgreen">+6 %</td>
+                        </tr>
+                        <tr>
+                            <td><div class="status win">Zisk</div></td>
+                            <td><div class="ticker-logo"> <img src="{$basePath}/template/assets/facebook.png" alt=""><p>(FB)</p></div></td>
+                            <td>11.4.2019</td>
+                            <td>22.5.2019</td>
+                            <td><div class="direction short">Short</div></td>
+                            <td><div class="strategy">Debit spread</div></td>
+                            <td>0.61</td>
+                            <td>61</td>
+                            <td>0.51</td>
+                            <td>51</td>
+                            <td>79/120</td>
+                            <td style="color:yellowgreen">51 $</td>
+                            <td>81%</td>
+                            <td style="color:yellowgreen">+2 %</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </main>
     </div>
     {*JS pro tuto stránku*}

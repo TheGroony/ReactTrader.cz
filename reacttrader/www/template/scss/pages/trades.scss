@@ -29,5 +29,213 @@
     .header {
       @include main-menu;
     }
+    main {
+      display: flex;
+      flex-flow: column nowrap;
+      .nadpis {
+        text-align: center;
+        padding: 2rem;
+      }
+      .content {
+        margin: 1rem;
+        .input-container {
+          margin-left: 1rem;
+          margin-right: 1rem;
+          .stocks {
+            margin: 0.5rem;
+            label {
+              input[type=radio] {
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+              }
+              input[type=radio] + img {
+                cursor: pointer;
+              }
+              img {
+                border-radius: 50%;
+                transition: box-shadow 0.1s;
+                padding: -1rem;
+                width: 3rem;
+                box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+              }
+              input[type=radio]:checked + img{
+                box-shadow: 0 0 0 5px dodgerblue;
+              }
+            }
+          }
+          .input {
+            .input-rectangle {
+              box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
+              background-color: white;
+              padding: 0.5rem;
+              display: flex;
+              flex-flow: row nowrap;
+              form {
+                flex: 1 1 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: flex-start;
+                input {
+                  margin: auto;
+                }
+                input:first-child {
+                  margin-left: 0;
+                }
+                .tickerInput {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  text-transform: uppercase;
+                  width: 20vh;
+                }
+                .fromInput, .tillInput {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  min-width: 20vh;
+                }
+                .hidden {
+                  position: absolute;
+                  opacity: 0;
+                  width: 0;
+                  height: 0;
+                }
+                .direction {
+                  border: none;
+                  background-color: yellowgreen;
+                  border-radius: 30px;
+                  padding: 0.5rem;
+                  color: white;
+                  min-width: 7.5rem;
+                  height: 3rem;
+                  &:hover {
+                    opacity: 0.85;
+                    cursor: pointer;
+                  }
+                }
+                select {
+                  appearance: none;
+                  margin: 0.5rem;
+                  border: none;
+                  outline: none;
+                  padding: 1rem;
+                  background-color: lightgray;
+                  border-radius: 30px;
+                  color: white;
+                  cursor: pointer;
+                  &:hover {
+                    opacity: 0.85;
+                  }
+                }
+                .maxProfit, .maxLoss, .openingIv, .closingIv, .realisedPl {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  text-transform: uppercase;
+                  width: 10vh;
+                }
+                input[type=submit] {
+                  outline: none;
+                  border: none;
+                  color: white;
+                  background-color: #3EA1DB;
+                  padding: 1rem;
+                  border-radius: 30px;
+                  width: 5rem;
+                  &:hover {
+                    opacity: 0.85;
+                  }
+                }
+              }
+              .doneTrade {
+
+              }
+              .openTrade {
+                display: none;
+              }
+              .accountDeposit {
+                display: none;
+              }
+            }
+          }
+          .input-type {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            padding: 0.5rem;
+            .volba {
+              display: flex;
+              flex-flow: column wrap;
+              justify-content: center;
+              align-items: center;
+              font-size: 15px;
+              padding: 0.5rem;
+              label {
+                padding: 0.25rem;
+              }
+            }
+          }
+        }
+        .trade-table {
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            tr th {
+              padding-bottom: 1rem;
+              padding-top: 1rem;
+            }
+            tr:nth-child(even) {
+              background-color: #FAFAFA;
+            }
+            tr:hover {
+              background-color: #eeeeee;
+            }
+            .status {
+              padding: 0.5rem;
+              margin: 1rem;
+              border-radius: 30px;
+              color: white;
+            }
+            .ticker-logo {
+              img {
+                width: 2rem;
+              }
+            }
+            .open {
+              background-color: darkorange;
+            }
+            .win {
+              background-color: yellowgreen;
+            }
+            .direction {
+              padding: 0.5rem;
+              margin: 1rem;
+              border-radius: 30px;
+              color: white
+            }
+            .strategy {
+              padding: 0.5rem;
+              margin: 1rem;
+              border-radius: 30px;
+              color: white;
+              background-color: lightgray;
+            }
+            .long {
+              background-color: yellowgreen;
+            }
+            .short {
+              background-color: #C90000;
+            }
+          }
+        }
+      }
+    }
   }
 }
