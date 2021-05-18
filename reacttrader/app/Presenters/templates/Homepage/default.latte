@@ -18,11 +18,11 @@
     <div class="navbar-mobile">
         <div class="blur"></div>
         <div class="overlay">
-            <a href="#" id="closeMenuBtn"><i class="fa fa-times"></i></a>
+            <a id="closeMenuBtn"><i class="fa fa-times"></i></a>
             <div class="overlay-content">
-                <a data-scroll href="#menu">MENU</a>
-                <a data-scroll href="#instrumenty">PODPOROVANÉ INSTRUMENTY</a>
-                <a data-scroll href="#kontakt">KONTAKT</a>
+                <a data-scroll href="#menu" class="link">MENU</a>
+                <a data-scroll href="#instrumenty" class="link">PODPOROVANÉ INSTRUMENTY</a>
+                <a data-scroll href="#kontakt" class="link">KONTAKT</a>
                 <div class="loginButton">
                     <a n:href="Login:default">PŘIHLÁSIT SE</a>
                 </div>
@@ -35,7 +35,7 @@
     <div class="info" data-aos="fade-up">
         <p class="before">Veškerá Vaše trading kariéra</p>
         <p class="mainHeader">Na jednom místě</p>
-        <p class="description">Mějte všechny obchody a myšlenky pod kontrolou díky přehlednému plánu, který máte vždy před sebou.</p>
+        <p class="description">Mějte všechny obchody a myšlenky pod kontrolou díky přehlednému deníku, který máte vždy před sebou.</p>
     </div>
     <div class="cloud" data-aos="fade-up">
         <div class="cloud-image">
@@ -61,8 +61,7 @@
         </div>
         <div class="text">
             <p>Veďte si podrobný přehled obchodů nejen těch nejznámějších společností,
-                mějte výsledky trading účtu vždy u sebe, sledujte jeho růst, vylaďte Váš plán a
-                zapište si jakékoliv myšlenky či nápady na obchody, aby Vás trh již nenachytal na leknínech.</p>
+                mějte výsledky trading účtu vždy u sebe, sledujte jeho růst, vylaďte Váš plán a trh Vás již nikdy nenachytá na leknínech.</p>
             <p>Podívejte se na <a data-scroll href="#instrumenty" class="href">dostupné instrumenty -></a></p>
         </div>
     </div>
@@ -81,7 +80,7 @@
     </div>
     <div class="info" data-aos="fade-up">
         <p class="mainHeader" data-aos="fade-up">Dostupné instrumenty</p>
-        <p class="description">ReactTrader aktuálně podporuje zápis akcií, opcí, ETF & kryptoměny BTC, do budoucna ovšem přibude více instrumentů</p>
+        <p class="description">ReactTrader aktuálně podporuje zápis známých opcí a vlastních ETF, do budoucna ovšem přibude více instrumentů</p>
         <p class="description">Máte dotaz? <a data-scroll href="#kontakt" class="href">Napiště nám -></a></p>
     </div>
 </section>
@@ -95,6 +94,7 @@
             <img src="{$basePath}/template/assets/cloud-kontakt-desktop.png" alt="">
         </div>
         <div class="dotaznik" data-aos="fade-up">
+            {*
             <form action="">
                 <div class="input">
                     <input type="text" id="name" placeholder="Vaše jméno">
@@ -110,7 +110,8 @@
                 <div class="input">
                     <input type="submit" value="ODESLAT">
                 </div>
-            </form>
+            </form>*}
+            {control contactForm}
         </div>
     </div>
 </section>

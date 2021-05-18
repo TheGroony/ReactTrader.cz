@@ -27,7 +27,9 @@
 		</script>
 		{* for Smoothscroll*}
 		<script>
-			const scroll = new SmoothScroll('a[href*="#"]');
+			const scroll = new SmoothScroll('a[href*="#"]', {
+				topOnEmptyHash: false,
+			});
 		</script>
 	{/block}
 </body>

@@ -8,66 +8,22 @@
             <div class="content">
                 <div class="input-container">
                     <div class="stocks">
-                        <label for="apple">
-                            <input type="radio" name="stock" id="apple">
-                            <img src="{$basePath}/template/assets/apple.png" alt="">
-                        </label>
-                        <label for="facebook">
-                            <input type="radio" name="stock" id="facebook">
-                            <img src="{$basePath}/template/assets/facebook.png" alt="">
-
-                        </label>
-                        <label for="netflix">
-                            <input type="radio" name="stock" id="netflix">
-                            <img src="{$basePath}/template/assets/netflix.png" alt="">
-                        </label>
-                        <label for="twitter">
-                            <input type="radio" name="stock" id="twitter">
-                            <img src="{$basePath}/template/assets/twitter.png" alt="">
-                        </label>
-                        <label for="amazon">
-                            <input type="radio" name="stock" id="amazon">
-                            <img src="{$basePath}/template/assets/amazon.png" alt="">
-                        </label>
-                        <label for="tesla">
-                            <input type="radio" name="stock" id="tesla">
-                            <img src="{$basePath}/template/assets/tesla.png" alt="">
-                        </label>
-                        <label for="nio">
-                            <input type="radio" name="stock" id="nio">
-                            <img src="{$basePath}/template/assets/nio.png" alt="">
-                        </label>
-                        <label for="own">
-                            <input type="radio" name="stock" id="own">
-                            <img src="{$basePath}/template/assets/plus.png" alt="">
-                        </label>
+                        {foreach $stocks as $stock}
+                            <label for="{$stock->nazev}">
+                                <input type="radio" name="stock" id="{$stock->nazev}" class="stockClass" data-ticker="{$stock->ticker}">
+                                <img src="{$basePath}{$stock->img_src}" alt="">
+                            </label>
+                        {/foreach}
                     </div>
                     <div class="input">
                         <div class="input-rectangle">
-                            <form action="" class="doneTrade">
-                                <input type="text" placeholder="TICKER" class="tickerInput">
-                                <input type="text" placeholder="OD" onfocus="(this.type='date')" class="fromInput">
-                                <input type="text" placeholder="DO" onfocus="(this.type='date')" class="tillInput">
-                                <button type="button" class="direction">LONG</button>
-                                <div class="hidden">
-                                    <input type="checkbox" id="hiddenDirectionInput" name="direction"> {* long nebo short*}
-                                </div>
-                                <select name="strategy" id=""> {* strategie*}
-                                    <option value="Debit spread">Debit spread</option>
-                                    <option value="Credit spread">Credit spread</option>
-                                </select>
-                                <input type="number" placeholder="MAX PROFIT" class="maxProfit">
-                                <input type="number" placeholder="MAX LOSS" class="maxLoss">
-                                <input type="number" placeholder="IV" class="openingIv">
-                                <input type="number" placeholder="CLOSE IV" class="closingIv">
-                                <input type="number" placeholder="P/L" class="realisedPl">
-                                <input type="submit" value="->">
-                            </form>
+                            {control doneTradeForm}
+                            {*
                             <form action="" class="openTrade">
                                 <input type="text" placeholder="TICKER" class="tickerInput">
                                 <input type="text" placeholder="OD" onfocus="(this.type='date')" class="fromInput">
-                                <input type="checkbox"> {* long nebo short*}
-                                <select name="strategy" id=""> {* strategie*}
+                                <input type="checkbox">
+                                <select name="strategy" id="">
                                     <option value="Debit spread">Debit spread</option>
                                     <option value="Credit spread">Credit spread</option>
                                 </select>
@@ -75,32 +31,29 @@
                                 <input type="number" placeholder="MAX LOSS">
                                 <input type="number" placeholder="IV">
                                 <input type="submit" value="->">
-                            </form>
-                            <form action="" class="accountDeposit">
-                                <input type="text" placeholder="Název depozitu">
-                                <input type="date" placeholder="DATUM">
-                                <input type="number" placeholder="ČÁSTKA ($)">
-                                <input type="submit" value="->">
-                            </form>
+                            </form>*}
+                            {control accountDepositForm}
                         </div>
                     </div>
                     <div class="input-type">
                         <div class="volba">
                             <label for="doneTrade">Uzavřený obchod</label>
-                            <input type="radio" name="type" id="doneTrade" checked>
+                            <input type="radio" class="formType" name="type" id="doneTrade" data-type="doneTrade" checked>
                         </div>
+                        {*
                         <div class="volba">
                             <label for="openTrade">Otevřený obchod</label>
                             <input type="radio" name="type" id="openTrade">
-                        </div>
+                        </div>*}
                         <div class="volba">
                             <label for="accountDeposit">Vklad/výběr</label>
-                            <input type="radio" name="type" id="accountDeposit">
+                            <input type="radio" class="formType" name="type" id="accountDeposit" data-type="deposit">
                         </div>
                     </div>
                 </div>
                 <div class="trade-table">
                     <table>
+                        <thead>
                         <tr>
                             <th>Stav</th>
                             <th>Ticker</th>
@@ -108,79 +61,37 @@
                             <th>Uzavření</th>
                             <th>Směr</th>
                             <th>Strategie</th>
-                            <th>Opening cena</th>
-                            <th>Opening IV </th>
-                            <th>Closing cena</th>
-                            <th>Closing IV</th>
+                            <th>Otevírací cena</th>
+                            <th>Otevírací IV </th>
+                            <th>Uzavírací cena</th>
+                            <th>Uzavírací IV</th>
                             <th>Max P/L</th>
                             <th>P/L</th>
-                            <th>POP</th>
                             <th>Pohyb portfolia</th>
                         </tr>
-                        <tr>
-                            <td><div class="status open">Otevřený</div></td>
-                            <td><div class="ticker-logo"><img src="{$basePath}/template/assets/apple.png" alt=""><p>(AAPL)</p></div></td>
-                            <td>11.4.2019</td>
-                            <td>-</td>
-                            <td><div class="direction long">Long</div></td>
-                            <td><div class="strategy">Credit spread</div></td>
-                            <td>0.71</td>
-                            <td>71</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>120/354</td>
-                            <td>-</td>
-                            <td>76%</td>
-                            <td style="color:yellowgreen">+6 %</td>
-                        </tr>
-                        <tr>
-                            <td><div class="status win">Zisk</div></td>
-                            <td><div class="ticker-logo"> <img src="{$basePath}/template/assets/facebook.png" alt=""><p>(FB)</p></div></td>
-                            <td>11.4.2019</td>
-                            <td>22.5.2019</td>
-                            <td><div class="direction short">Short</div></td>
-                            <td><div class="strategy">Debit spread</div></td>
-                            <td>0.61</td>
-                            <td>61</td>
-                            <td>0.51</td>
-                            <td>51</td>
-                            <td>79/120</td>
-                            <td style="color:yellowgreen">51 $</td>
-                            <td>81%</td>
-                            <td style="color:yellowgreen">+2 %</td>
-                        </tr>
-                        <tr>
-                            <td><div class="status open">Otevřený</div></td>
-                            <td><div class="ticker-logo"><img src="{$basePath}/template/assets/apple.png" alt=""><p>(AAPL)</p></div></td>
-                            <td>11.4.2019</td>
-                            <td>-</td>
-                            <td><div class="direction long">Long</div></td>
-                            <td><div class="strategy">Credit spread</div></td>
-                            <td>0.71</td>
-                            <td>71</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>120/354</td>
-                            <td>-</td>
-                            <td>76%</td>
-                            <td style="color:yellowgreen">+6 %</td>
-                        </tr>
-                        <tr>
-                            <td><div class="status win">Zisk</div></td>
-                            <td><div class="ticker-logo"> <img src="{$basePath}/template/assets/facebook.png" alt=""><p>(FB)</p></div></td>
-                            <td>11.4.2019</td>
-                            <td>22.5.2019</td>
-                            <td><div class="direction short">Short</div></td>
-                            <td><div class="strategy">Debit spread</div></td>
-                            <td>0.61</td>
-                            <td>61</td>
-                            <td>0.51</td>
-                            <td>51</td>
-                            <td>79/120</td>
-                            <td style="color:yellowgreen">51 $</td>
-                            <td>81%</td>
-                            <td style="color:yellowgreen">+2 %</td>
-                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach $trades as $trade}
+                            <tr>
+                                <td>
+                                    <div n:if="$trade->profitLoss > 0" class="status win">Zisk</div>
+                                    <div n:if="$trade->profitLoss <= 0" class="status loss">Ztráta</div>
+                                </td>
+                                <td><div class="ticker-logo"><img src="{$basePath}/template/assets/{$trade->imageName}" alt=""><p>({$trade->ticker})</p></div></td>
+                                <td>{$trade->from->format("j. n. Y")}</td>
+                                <td>{if $trade->till != null}{$trade->till->format("j. n. Y")}{else}-{/if}</td>
+                                <td><div class="direction {$trade->direction}">{$trade->direction}</div></td>
+                                <td><div class="strategy">{$trade->strategy}</div></td>
+                                <td>{$trade->openingIv / 100}</td>
+                                <td>{$trade->openingIv}</td>
+                                <td>{if $trade->closingIv != null}{$trade->closingIv / 100}{else}-{/if}</td>
+                                <td>{if $trade->closingIv != null}{$trade->closingIv}{else}-{/if}</td>
+                                <td>{$trade->maxProfit}/{$trade->maxLoss}</td>
+                                <td>{if $trade->profitLoss != 0}<span class="{if $trade->profitLoss > 0}winpl{else}lossColor{/if}">{$trade->profitLoss} $</span>{else}-{/if}</td>
+                                <td>{if $trade->profitLoss != 0  && $trade->liquidityBefore != 0}<span class="{if $trade->profitLoss > 0}winpl{else}losspl{/if}">{number_format(($trade->profitLoss/$trade->liquidityBefore)*100, 2, ".", "")} %</span>{else}-{/if}</td>
+                            </tr>
+                        {/foreach}
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -188,4 +99,5 @@
     </div>
     {*JS pro tuto stránku*}
     <script src="{$basePath}/template/js/dist/mainMenu.js"></script>
+    <script src="{$basePath}/template/js/dist/trades.js"></script>
 {/block}

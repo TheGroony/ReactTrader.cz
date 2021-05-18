@@ -49,7 +49,9 @@
             align-items: center;
             text-align: center;
             .liquidity {
-
+              h1 {
+                padding: 0.5rem;
+              }
             }
             .growth {
               padding: 1rem;
@@ -58,11 +60,70 @@
               &>div {
                 padding: 0.5rem;
               }
+              .green {
+                color: yellowgreen;
+              }
+              .red {
+                color: #C90000;
+              }
+              .month {
+                p {
+                  font-size: 20px;
+                }
+                padding: 0.5rem;
+                .timerange {
+                  font-size: 15px;
+                }
+              }
+              .year {
+                p {
+                  font-size: 20px;
+                }
+                padding: 0.5rem;
+                .timerange {
+                  font-size: 15px;
+                }
+              }
             }
           }
         }
         .secondHalf {
-
+          flex: 0 1 50%;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          align-items: center;
+          h2 {
+            padding: 1rem;
+          }
+          table {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            margin: auto;
+            tr:nth-child(even) {
+              background-color: #FAFAFA;
+            }
+            tr:hover {
+              background-color: #eeeeee;
+            }
+            text-align: center;
+            th {
+              padding: 0.5rem;
+              font-weight: 400;
+            }
+            td {
+              padding: 0.5rem;
+            }
+            .depositDate {
+              background-color: lightgray;
+              color: white;
+              border-radius: 30px;
+              padding: 0.25rem;
+            }
+          }
         }
       }
     }
@@ -132,6 +193,12 @@
             .growth {
               display: flex;
               flex-flow: row wrap;
+              .green {
+                color: yellowgreen;
+              }
+              .red {
+                color: #C90000;
+              }
               .month {
                 p {
                   font-size: 20px;
@@ -156,6 +223,41 @@
 
         .secondHalf {
           flex: 0 1 50%;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          align-items: center;
+          h2 {
+            padding: 1rem;
+          }
+          table {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            margin: auto;
+            tr:nth-child(even) {
+              background-color: #FAFAFA;
+            }
+            tr:hover {
+              background-color: #eeeeee;
+            }
+            text-align: center;
+            th {
+              padding: 0.5rem;
+              font-weight: 400;
+            }
+            td {
+              padding: 0.5rem;
+            }
+            .depositDate {
+              background-color: lightgray;
+              color: white;
+              border-radius: 30px;
+              padding: 0.25rem;
+            }
+          }
         }
       }
     }

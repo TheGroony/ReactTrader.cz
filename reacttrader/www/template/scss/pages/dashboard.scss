@@ -12,6 +12,147 @@
     .header {
       @include main-menu-mobile;
     }
+    main {
+      display: flex;
+      flex-flow: column nowrap;
+      .nadpis {
+        text-align: center;
+        padding: 2rem;
+      }
+      .content {
+        display: flex;
+        flex-flow: column wrap;
+        .row {
+          display: flex;
+          flex-flow: column wrap;
+        }
+        .first {
+          .card {
+            height: 50vh;
+            background-color: #eeeeee;
+            border-radius: 30px;
+            margin: 0.75em;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            .upper {
+              display: flex;
+              flex-flow: column wrap;
+              justify-content: center;
+              align-items: center;
+              .left {
+                margin: 1rem;
+                display: flex;
+                flex-flow: column wrap;
+                .logo {
+                  img {
+                    width: 10vh;
+                  }
+                }
+                .ticker {
+                  text-align: center;
+                }
+              }
+              .right {
+                margin: 1rem;
+                display: flex;
+                flex-flow: column wrap;
+                .win {
+                  background-color: yellowgreen;
+                  padding: 1rem;
+                  border-radius: 30px;
+                  color: white;
+                  width: 20vh;
+                  text-align: center;
+                  &:hover {
+                    opacity: 0.8;
+                  }
+                  transition: opacity 0.2s;
+                }
+                .winColor {
+                  color: yellowgreen;
+                }
+                .lossColor {
+                  color: #E20000;
+                }
+                .loss {
+                  background-color: #E20000;
+                  padding: 1rem;
+                  border-radius: 30px;
+                  color: white;
+                  width: 20vh;
+                  text-align: center;
+                  &:hover {
+                    opacity: 0.8;
+                  }
+                  transition: opacity 0.2s;
+                }
+                .block {
+                  display: flex;
+                  flex-flow: row wrap;
+                  justify-content: center;
+                  align-items: center;
+                  p {
+                    font-size: 17.5px;
+                  }
+                  h1 {
+                    padding: 0.5rem;
+                  }
+                }
+              }
+            }
+            .lower {
+
+            }
+          }
+        }
+        .second {
+          .container {
+            background-color: #eeeeee;
+            border-radius: 30px;
+            padding: 1rem;
+            margin: 1rem;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            .item {
+              p {
+                font-size: 15px;
+              }
+              .winColor {
+                color: yellowgreen;
+              }
+              .lossColor {
+                color: #E20000;
+              }
+              padding: 0.5rem;
+              text-align: center;
+            }
+          }
+        }
+        .third {
+          margin: 1rem;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+          .button {
+            a {
+              color: white;
+              border-radius: 30px;
+              padding: 1rem;
+              text-decoration: none;
+              transition: opacity 0.2s;
+              background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
+              &:hover {
+                opacity: 0.9;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -27,6 +168,150 @@
     font-weight: 200;
     .header {
       @include main-menu;
+    }
+    main {
+      display: flex;
+      flex-flow: column nowrap;
+      .nadpis {
+        text-align: center;
+        padding: 2rem;
+      }
+      .content {
+        display: flex;
+        flex-flow: column wrap;
+        .row {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+        }
+        .first {
+          .card {
+            height: 45vh;
+            background-color: #eeeeee;
+            border-radius: 30px;
+            margin: 0.75em;
+            flex: 0 1 45%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            .upper {
+              flex: 0 1 100%;
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: space-between;
+              padding: 4rem;
+              align-items: center;
+              .left {
+                margin: 1rem;
+                display: flex;
+                flex-flow: column wrap;
+                .logo {
+                  img {
+                    width: 12.5vh;
+                  }
+                }
+                .ticker {
+                  text-align: center;
+                }
+              }
+              .right {
+                margin: 1rem;
+                display: flex;
+                flex-flow: column wrap;
+                .win {
+                  background-color: yellowgreen;
+                  padding: 1rem;
+                  border-radius: 30px;
+                  color: white;
+                  width: 20vh;
+                  text-align: center;
+                  &:hover {
+                    opacity: 0.8;
+                  }
+                  transition: opacity 0.2s;
+                }
+                .winColor {
+                  color: yellowgreen;
+                }
+                .lossColor {
+                  color: #E20000;
+                }
+                .loss {
+                  background-color: #E20000;
+                  padding: 1rem;
+                  border-radius: 30px;
+                  color: white;
+                  width: 20vh;
+                  text-align: center;
+                  &:hover {
+                    opacity: 0.8;
+                  }
+                  transition: opacity 0.2s;
+                }
+                .block {
+                  display: flex;
+                  flex-flow: row wrap;
+                  justify-content: center;
+                  align-items: center;
+                  p {
+                    font-size: 17.5px;
+                  }
+                  h1 {
+                    padding: 0.5rem;
+                  }
+                }
+              }
+            }
+            .lower {
+              p {
+                //padding-top: 1rem;
+              }
+            }
+          }
+        }
+        .second {
+          .container {
+            background-color: #eeeeee;
+            border-radius: 30px;
+            padding: 1rem;
+            width: 90%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            .item {
+              p {
+                font-size: 15px;
+              }
+              .winColor {
+                color: yellowgreen;
+              }
+              .lossColor {
+                color: #E20000;
+              }
+              padding: 0.5rem;
+              text-align: center;
+            }
+          }
+        }
+        .third {
+          margin: 1rem;
+          .button {
+            a {
+              color: white;
+              border-radius: 30px;
+              padding: 1rem;
+              text-decoration: none;
+              transition: opacity 0.2s;
+              background-image: linear-gradient(180deg, #3EA1DB 0%, #5D34EC 100%);
+              &:hover {
+                opacity: 0.9;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

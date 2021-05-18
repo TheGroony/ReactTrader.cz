@@ -30,6 +30,7 @@ autoDI:
     services:
         - implement: App\Components\Forms\I*Factory
         - implement: App\Components\Parts\I*Factory
+        - class: App\Models\*Manager
 
 nextras.orm:
     model: App\Orm\Orm

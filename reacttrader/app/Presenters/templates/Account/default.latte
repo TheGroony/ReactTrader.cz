@@ -12,29 +12,47 @@
                           <i class="fas fa-user"></i>
                       </div>
                       <div class="userInfo">
-                          <h3>Jan Novák</h3>
-                          <p>novak@gmail.com</p>
+                          <h3>{$account->name}</h3>
+                          <p>{$account->email}</p>
                       </div>
                   </div>
                   <div class="right">
                       <div class="liquidity">
-                          <h3>Net Liq</h3>
-                          <h1>24 548 $</h1>
+                          <h3>Likvidita</h3>
+                          <h1>{$currentLiquidity} $</h1>
                       </div>
                       <div class="growth">
                           <div class="month">
-                              <p style="color:limegreen">+2,1 %</p>
-                              <p class="timerange">(1m)</p>
+                              <p class="{if $monthlyChange > 0}green{else}red{/if}">{if $monthlyChange > 0}+ {else}- {/if}{$monthlyChange} $</p>
+                              <p class="timerange">(měsíc)</p>
                           </div>
                           <div class="year">
-                              <p style="color:limegreen">+13,5 %</p>
-                              <p class="timerange">(1y)</p>
+                              <p class="{if $annualChange > 0}green{else}red{/if}">{if $annualChange > 0}+ {else}- {/if}{$annualChange} $</p>
+                              <p class="timerange">(rok)</p>
                           </div>
                       </div>
                   </div>
               </div>
               <div class="secondHalf">
-
+                  <table>
+                      <h2>Vklady a výběry</h2>
+                      <thead>
+                      <tr>
+                          <th>Datum</th>
+                          <th>Popis</th>
+                          <th>Částka</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      {foreach $deposits as $deposit}
+                          <tr>
+                              <td ><span class="depositDate">{$deposit->date->format("j. n. Y")}</span></td>
+                              <td>{$deposit->description}</td>
+                              <td>{$deposit->amount} $</td>
+                          </tr>
+                      {/foreach}
+                      </tbody>
+                  </table>
               </div>
           </div>
       </main>

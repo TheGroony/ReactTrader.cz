@@ -4,7 +4,7 @@
 namespace App\Components\Parts;
 
 
-interface IMainMenuFactory
+interface IMainMenuFactory // továrna na hlavní menu
 {
 	/**
 	 * @return MainMenu

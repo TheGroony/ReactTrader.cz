@@ -4,7 +4,7 @@
 namespace App\Components\Forms;
 
 
-interface ILogoutFormFactory
+interface ILogoutFormFactory // Továrna na komponentu
 {
 	/**
 	 * @return LogoutForm

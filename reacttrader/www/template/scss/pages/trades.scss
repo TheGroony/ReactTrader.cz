@@ -12,6 +12,226 @@
     .header {
       @include main-menu-mobile;
     }
+    main {
+      display: flex;
+      flex-flow: column nowrap;
+      .nadpis {
+        text-align: center;
+        padding: 2rem;
+      }
+      .content {
+        .input-container {
+          .stocks {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            margin: 2rem;
+            label {
+              input[type=radio] {
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+              }
+              input[type=radio] + img {
+                cursor: pointer;
+              }
+              img {
+                border-radius: 50%;
+                transition: box-shadow 0.1s;
+                padding: -1rem;
+                width: 3rem;
+                box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+              }
+              input[type=radio]:checked + img{
+                box-shadow: 0 0 0 5px dodgerblue;
+              }
+            }
+          }
+          .input {
+            .input-rectangle {
+              box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
+              background-color: white;
+              padding: 0.5rem;
+              display: flex;
+              flex-flow: column nowrap;
+              form {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                justify-content: center;
+                input {
+                  width: 90%;
+                  margin: 0.5rem;
+                  padding: 0.5rem;
+                }
+                .tickerInput {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  text-transform: uppercase;
+                  width: 25vh;
+                }
+
+                .depositName {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  width: 40vh;
+                }
+
+                .fromInput, .tillInput {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  width: 25vh;
+                }
+                .hidden {
+                  position: absolute;
+                  opacity: 0;
+                  width: 0;
+                  height: 0;
+                }
+                .direction {
+                  border: none;
+                  background-color: yellowgreen;
+                  border-radius: 30px;
+                  padding: 0.5rem;
+                  color: white;
+                  min-width: 11rem;
+                  height: 3rem;
+                  &:hover {
+                    opacity: 0.85;
+                    cursor: pointer;
+                  }
+                }
+                select {
+                  appearance: none;
+                  margin: 0.5rem;
+                  border: none;
+                  outline: none;
+                  padding: 1rem;
+                  min-width: 11rem;
+                  background-color: lightgray;
+                  border-radius: 30px;
+                  color: white;
+                  cursor: pointer;
+                  &:hover {
+                    opacity: 0.85;
+                  }
+                }
+                .maxProfit, .maxLoss, .openingIv, .closingIv, .realisedPl {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  text-transform: uppercase;
+                  width: 25vh;
+                }
+
+                .amount {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  width: 30vh;
+                }
+
+                input[type=submit] {
+                  outline: none;
+                  border: none;
+                  color: white;
+                  background-color: #3EA1DB;
+                  padding: 1rem;
+                  border-radius: 30px;
+                  width: 5rem;
+                  &:hover {
+                    opacity: 0.85;
+                  }
+                }
+              }
+              .accountDeposit {
+                display: none;
+              }
+            }
+          }
+          .input-type {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+          }
+        }
+        .trade-table {
+          overflow-x: scroll;
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            tr th {
+              padding-bottom: 1rem;
+              padding-top: 1rem;
+            }
+            tr:nth-child(even) {
+              background-color: #FAFAFA;
+            }
+            tr:hover {
+              background-color: #eeeeee;
+            }
+            .status {
+              padding: 0.5rem;
+              margin: 1rem;
+              border-radius: 30px;
+              color: white;
+            }
+            .ticker-logo {
+              img {
+                width: 2rem;
+              }
+            }
+            .open {
+              background-color: darkorange;
+            }
+            .win {
+              background-color: yellowgreen;
+            }
+            .loss {
+              background-color: #C90000;
+            }
+            .winColor {
+              color: yellowgreen;
+            }
+            .lossColor {
+              color:  #C90000;
+            }
+
+            .direction {
+              padding: 0.5rem;
+              margin: 1rem;
+              border-radius: 30px;
+              color: white
+            }
+            .strategy {
+              padding: 0.5rem;
+              margin: 1rem;
+              border-radius: 30px;
+              color: white;
+              background-color: lightgray;
+            }
+            .long {
+              background-color: yellowgreen;
+            }
+            .short {
+              background-color: #C90000;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -92,12 +312,21 @@
                   text-transform: uppercase;
                   width: 20vh;
                 }
+
+                .depositName {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  width: 40vh;
+                }
+
                 .fromInput, .tillInput {
                   border: 1px solid lightgray;
                   outline: none;
                   font-size: 2vh;
                   padding: 1rem;
-                  min-width: 20vh;
+                  width: 22vh;
                 }
                 .hidden {
                   position: absolute;
@@ -140,6 +369,15 @@
                   text-transform: uppercase;
                   width: 10vh;
                 }
+
+                .amount {
+                  border: 1px solid lightgray;
+                  outline: none;
+                  font-size: 2vh;
+                  padding: 1rem;
+                  width: 30vh;
+                }
+
                 input[type=submit] {
                   outline: none;
                   border: none;
@@ -184,6 +422,7 @@
         }
         .trade-table {
           table {
+            cursor: default;
             border-collapse: collapse;
             width: 100%;
             text-align: center;
@@ -212,7 +451,24 @@
               background-color: darkorange;
             }
             .win {
+              transition: background-color 0.2s;
               background-color: yellowgreen;
+              &:hover {
+                background-color: greenyellow;
+              }
+            }
+            .loss {
+              transition: background-color 0.2s;
+              background-color: #C90000;
+              &:hover {
+                background-color: #ff1a1a;
+              }
+            }
+            .winColor {
+              color: yellowgreen;
+            }
+            .lossColor {
+              color:  #C90000;
             }
             .direction {
               padding: 0.5rem;
@@ -221,17 +477,29 @@
               color: white
             }
             .strategy {
+              transition: background-color 0.2s;
               padding: 0.5rem;
               margin: 1rem;
               border-radius: 30px;
               color: white;
               background-color: lightgray;
+              &:hover {
+                background-color: darkgray;
+              }
             }
             .long {
+              transition: background-color 0.2s;
               background-color: yellowgreen;
+              &:hover {
+                background-color: greenyellow;
+              }
             }
             .short {
+              transition: background-color 0.2s;
               background-color: #C90000;
+              &:hover {
+                background-color: #ff1a1a;
+              }
             }
           }
         }

@@ -2,7 +2,110 @@
     <div class="dashboard">
         {control mainMenu}
       <main>
-          <h1>Dashboard</h1>
+          <div class="nadpis">
+              <h1>PŘEHLED</h1>
+          </div>
+          <div class="content">
+              <div class="row first">
+                  {foreach $lastTrade as $trade}
+                  <div class="card">
+                      <div class="upper">
+                          <div class="left">
+                              <div class="logo">
+                                  <img src="{$basePath}/template/assets/{$trade->imageName}" alt="">
+                              </div>
+                              <div class="ticker">
+                                  <p>({$trade->ticker})</p>
+                              </div>
+                          </div>
+                          <div class="right">
+                              <div class="block">
+                                  <p class="{if $trade->profitLoss > 0}win{else}loss{/if}">{if $trade->profitLoss > 0}ZISK{else}ZTRÁTA{/if}</p>
+                              </div>
+                              <div class="block">
+                                  <p class="{if $trade->profitLoss > 0}winColor{else}lossColor{/if}">{$trade->profitLoss} $</p>
+                                  <h1>/</h1>
+                                  <p class="{if $trade->profitLoss > 0}winColor{else}lossColor{/if}">{number_format(($trade->profitLoss/$trade->liquidityBefore)*100, 2, ".", "")} %</p>
+                              </div>
+                              <div class="block">
+                                  <p>{$trade->from->format("j. n. Y")} - {$trade->till->format("j. n. Y")}</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="lower">
+                          <p>POSLEDNÍ OBCHOD</p>
+                      </div>
+                  </div>
+                  {/foreach}
+                  <div n:if="$lastTrade == null" class="card">
+                      <p>ŽÁDNÁ DATA</p>
+                  </div>
+                  {foreach $bestMonthlyTrade as $trade}
+                      <div class="card">
+                          <div class="upper">
+                              <div class="left">
+                                  <div class="logo">
+                                      <img src="{$basePath}/template/assets/{$trade->imageName}" alt="">
+                                  </div>
+                                  <div class="ticker">
+                                      <p>({$trade->ticker})</p>
+                                  </div>
+                              </div>
+                              <div class="right">
+                                  <div class="block">
+                                      <p class="{if $trade->profitLoss > 0}win{else}loss{/if}">{if $trade->profitLoss > 0}ZISK{else}ZTRÁTA{/if}</p>
+                                  </div>
+                                  <div class="block">
+                                      <p class="{if $trade->profitLoss > 0}winColor{else}lossColor{/if}">{$trade->profitLoss} $</p>
+                                      <h1>/</h1>
+                                      <p class="{if $trade->profitLoss > 0}winColor{else}lossColor{/if}">{number_format(($trade->profitLoss/$trade->liquidityBefore)*100, 2, ".", "")} %</p>
+                                  </div>
+                                  <div class="block">
+                                      <p>{$trade->from->format("j. n. Y")} - {$trade->till->format("j. n. Y")}</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="lower">
+                              <p>NEJZISKOVĚJŠÍ OBCHOD MĚSÍCE</p>
+                          </div>
+                      </div>
+                  {/foreach}
+                  <div n:if="$bestMonthlyTrade == null" class="card">
+                      <p>ŽÁDNÁ DATA</p>
+                  </div>
+              </div>
+              <div class="row second">
+                  <div class="container">
+                      <div class="item">
+                          <h3>{$currentLiquidity} $</h3>
+                          <p>LIKVIDITA</p>
+                      </div>
+                      <div class="item">
+                          <h3 class="{if $monthlyChange > 0}winColor{else}lossColor{/if}">{if $monthlyChange !== 0}{$monthlyChange} ${else}-{/if}</h3>
+                          <p>TENTO MĚSÍC</p>
+                      </div>
+                      <div class="item">
+                          <h3 class="{if $annualChange > 0}winColor{else}lossColor{/if}">{if $annualChange !== 0}{$annualChange} ${else}-{/if}</h3>
+                          <p>TENTO ROK</p>
+                      </div>
+                      <div class="item">
+                          <h3 class="{if $monthlyChangeTrades > 0}winColor{else}lossColor{/if}">{if $monthlyChangeTrades !== 0}{$monthlyChangeTrades} ${else}-{/if}</h3>
+                          <p>TENTO MĚSÍC</p>
+                          <p>(POUZE OBCHODY)</p>
+                      </div>
+                      <div class="item">
+                          <h3 class="{if $annualChangeTrades > 0}winColor{else}lossColor{/if}">{if $annualChangeTrades !== 0}{$annualChangeTrades} ${else}-{/if}</h3>
+                          <p>TENTO ROK</p>
+                          <p>(POUZE OBCHODY)</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="row third">
+                  <div class="button">
+                      <a n:href="Trades:default">ZADAT OBCHOD -></a>
+                  </div>
+              </div>
+          </div>
       </main>
     </div>
     {*JS pro tuto stránku*}

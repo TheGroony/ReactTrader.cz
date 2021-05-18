@@ -10,6 +10,19 @@
   height: 5rem;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  .logo {
+    position: absolute;
+    left: 1%;
+    top: 1.5%;
+    img {
+      width: 2rem;
+      margin: 0.75rem;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
   .navbar {
     display: flex;
     flex-flow: row wrap;
@@ -40,7 +53,7 @@
         background-color: white;
         padding: 1rem;
         opacity: 0;
-        width: 35vh;
+        width: 36.5vh;
         pointer-events: none;
         transition: opacity 0.1s;
         display: flex;
@@ -55,6 +68,10 @@
         }
         .right {
           flex: 0 1 50%;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          align-items: center;
           padding: 1rem;
         }
         .button {

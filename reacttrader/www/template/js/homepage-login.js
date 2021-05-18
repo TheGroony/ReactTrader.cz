@@ -8,6 +8,7 @@ const clouds = document.querySelector(".mobile-clouds");
 // Mainpage
 const openMenuBtn = document.querySelector("#openMenuBtn");
 const closeMenuBtn = document.querySelector("#closeMenuBtn");
+const links = document.querySelectorAll(".link");
 const overlay =  document.querySelector(".overlay");
 const blurBg = document.querySelector(".blur");
 const mainPage = document.querySelector(".mainPage");
@@ -57,4 +58,11 @@ openMenuBtn.addEventListener("click", function() {
 closeMenuBtn.addEventListener("click", function() {
     overlay.style.height = "0%";
     blurBg.style.height = "0%";
+});
+
+links.forEach((link) => {
+    link.addEventListener("click", function() {
+        overlay.style.height = "0%";
+        blurBg.style.height = "0%";
+    });
 });

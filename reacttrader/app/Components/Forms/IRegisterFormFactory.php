@@ -4,7 +4,7 @@
 namespace App\Components\Forms;
 
 
-interface IRegisterFormFactory
+interface IRegisterFormFactory // Továrna na komponentu
 {
 	/**
 	 * @return RegisterForm

@@ -1,4 +1,9 @@
 <section class="header">
+    <div class="logo">
+        <a href="{plink Homepage:default}" class="headerHref">
+            <img src="{$basePath}/template/assets/Logo-no-shadow.png" alt="Logo ReactTrader">
+        </a>
+    </div>
     <div class="navbar">
         <a href="{plink Dashboard:default}">PŘEHLED</a>
         <a href="{plink Trades:default}">OBCHODY</a>
@@ -8,14 +13,16 @@
                 <i class="fas fa-user notClickable"></i>
             </a>
             <div class="mainmenu-overlay-content">
-                <h2>Jan Novák</h2>
+                <h2>{$account->name}</h2>
                 <div class="left">
-                    <h3>8 755 $</h3>
-                    <p style="color:limegreen">+ 210 $</p>
-                    <p style="color:limegreen">+ 9,48 %</p>
+                    <h3>{$liquidity} $</h3>
+                    <p style="color:{if $monthlyChange > 0}limegreen{else}#C90000{/if}">{if $monthlyChange > 0}+ {else}- {/if}{$monthlyChange} $</p>
+                    <p style="color:{if $annualChange > 0}limegreen{else}#C90000{/if}">{if $annualChange > 0}+ {else}- {/if}{$annualChange} $</p>
                 </div>
                 <div class="right">
-                    <h3>(2 745 $)</h3>
+                    <h4>(obchody)</h4>
+                    <h4 style="color:{if $monthlyChangeTrades > 0}limegreen{else}#C90000{/if}">{if $monthlyChangeTrades > 0}+ {else}- {/if}{$monthlyChangeTrades} $</h4>
+                    <h4 style="color:{if $annualChangeTrades > 0}limegreen{else}#C90000{/if}">{if $annualChangeTrades > 0}+ {else}- {/if}{$annualChangeTrades} $</h4>
                 </div>
                 <div class="button">
                     {control logoutForm}
@@ -34,12 +41,14 @@
             <div class="mainmenu-overlay-content-mobile">
                 <h2>Jan Novák</h2>
                 <div class="left">
-                    <h3>8 755 $</h3>
-                    <p style="color:limegreen">+ 210 $</p>
-                    <p style="color:limegreen">+ 9,48 %</p>
+                    <h3>{$liquidity} $</h3>
+                    <p style="color:{if $monthlyChange > 0}limegreen{else}#C90000{/if}">{if $monthlyChange > 0}+ {else}- {/if}{$monthlyChange} $</p>
+                    <p style="color:{if $annualChange > 0}limegreen{else}#C90000{/if}">{if $annualChange > 0}+ {else}- {/if}{$annualChange} $</p>
                 </div>
                  <div class="right">
-                     <h3>(2 745 $)</h3>
+                     <h4>(obchody)</h4>
+                     <h4 style="color:{if $monthlyChangeTrades > 0}limegreen{else}#C90000{/if}">{if $monthlyChangeTrades > 0}+ {else}- {/if}{$monthlyChangeTrades} $</h4>
+                     <h4 style="color:{if $annualChangeTrades > 0}limegreen{else}#C90000{/if}">{if $annualChangeTrades > 0}+ {else}- {/if}{$annualChangeTrades} $</h4>
                  </div>
                 <div class="button">
                     {control logoutForm}

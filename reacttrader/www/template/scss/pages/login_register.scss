@@ -81,6 +81,15 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
         .loginHeader {
             display: block;
         }
+        .backlink {
+            color: black;
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: opacity 0.2s;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
         .loginForm {
             display: inline-block;
         }
@@ -266,6 +275,18 @@ $bg-screen-leva: "../assets/leva-strana-bg.png";
         }
         .loginHeader {
             display: block;
+        }
+        .backlink {
+            position: absolute;
+            bottom: 2%;
+            left: 30%;
+            color: black;
+            text-decoration: none;
+            padding: 1rem;
+            transition: opacity 0.2s;
+            &:hover {
+                opacity: 0.8;
+            }
         }
         .header {
             font-size: 3rem;

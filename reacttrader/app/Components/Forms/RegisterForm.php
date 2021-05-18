@@ -13,7 +13,7 @@ class RegisterForm extends BasicForm
 
 	protected $customTemplate = "RegisterForm";
 
-	public function __construct(DatabaseAuthenticator $databaseAuthenticator)
+	public function __construct(DatabaseAuthenticator $databaseAuthenticator) // předání vlastního modelu pro práci s autentifikací
 	{
 		$this->databaseAuthenticator = $databaseAuthenticator;
 	}
@@ -25,7 +25,7 @@ class RegisterForm extends BasicForm
 		$template->render();
 	}
 
-	public function createComponentForm()
+	public function createComponentForm() // tvorba formu
 	{
 		$form = new Form;
 		$form->setHtmlAttribute("class", "login-form registerForm");
@@ -54,10 +54,10 @@ class RegisterForm extends BasicForm
 	 * $
 	 * @return void
 	 */
-	public function processForm(Form $form, \stdClass $values)
+	public function processForm(Form $form, \stdClass $values) // process odeslaného formu
 	{
 		try {
-			$user = $this->databaseAuthenticator->registerUser($values->email, $values->jmeno, $values->heslo);
+			$user = $this->databaseAuthenticator->registerUser($values->email, $values->jmeno, $values->heslo); // registrace nového uživatele na základě dat z formuláře
 			$this->onSuccess($user);
 		} catch (Nette\Security\AuthenticationException $exception) {
 			$this->onError($exception);
