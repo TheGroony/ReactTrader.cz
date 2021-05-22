@@ -3,3 +3,4 @@ config/local.neon
 vendor
 node_modules
 npm-shrinkwrap.json
+.DS_Store
