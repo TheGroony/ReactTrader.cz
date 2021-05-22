@@ -12,7 +12,7 @@ use App\Orm\Orm;
 use Nette\Application\UI\Presenter;
 use Nette\Security\User;
 
-class BasePresenter extends Presenter
+class BasePresenter extends Presenter // Hlavní basePresenter, od kterého dědí ostatní presentery častou funkcionalitu
 {
 	/** @var IMainMenuFactory @inject */
 	public $mainMenuFactory;
@@ -34,16 +34,16 @@ class BasePresenter extends Presenter
 		parent::__construct();
 	}
 
-	public function beforeRender()
+	public function beforeRender() // získá aktuálního uživatele ještě před renderem šablony
 	{
 		$this->template->account = $this->accountManager->getCurrentUser();
 	}
 
-	public function startup()
+	public function startup() // check uživatele
 	{
 		parent::startup();
 
-		if (!$this->user->isLoggedIn() && !$this->isLinkCurrent("Login:default")) {
+		if (!$this->user->isLoggedIn() && !$this->isLinkCurrent("Login:default")) { // pokud uživatel není přihlášený a pokusí se dostat někam jinak, dostane redirect
 			if (!$this->isLinkCurrent("Homepage:default")) {
 				$this->redirect("Login:default");
 			}
@@ -54,6 +54,7 @@ class BasePresenter extends Presenter
 		}
 	}
 
+	// komponenta hlavního menu do všech šablon
 	public function createComponentMainMenu(): MainMenu
 	{
 		return $this->mainMenuFactory->create();

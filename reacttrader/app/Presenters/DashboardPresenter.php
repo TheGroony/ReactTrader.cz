@@ -4,8 +4,9 @@
 namespace App\Presenters;
 
 
-class DashboardPresenter extends BasePresenter
+class DashboardPresenter extends BasePresenter // presenter stránky (nástěnka)
 {
+	// hodí do šablony požadované proměnné
 	public function renderDefault() {
 		$this->template->currentLiquidity = $this->tradeManager->getCurrentLiquidity();
 		$this->template->monthlyChange = $this->tradeManager->getMonthlyChange();

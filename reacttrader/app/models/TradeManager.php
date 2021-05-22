@@ -10,7 +10,12 @@ use Nette;
 use Nextras\Dbal\Utils\DateTimeImmutable;
 use Nextras\Orm\Collection\ICollection;
 
-class TradeManager
+/**
+ * Class TradeManager
+ * @package App\Models
+ * @author Jiří Strzelecki
+ */
+class TradeManager // hlavní model zajišťující celou práci s obchody
 {
 	/** @var Orm */
 	protected $orm;
@@ -46,6 +51,10 @@ class TradeManager
 		return $this->orm->persistAndFlush($deposit);
 	}
 
+	/**
+	 * Získá aktuální likviditu účtu aktuálního uživatele
+	 * @return int|mixed
+	 */
 	public function getCurrentLiquidity()
 	{
 		$liquidity = 0;
@@ -67,16 +76,25 @@ class TradeManager
 		return $liquidity;
 	}
 
+	/**
+	 * Vrátí všechny vklady a výběry aktuálního uživatele
+	 * @return array
+	 */
 	public function getAllDeposits()
 	{
 		return $this->orm->deposits->findBy(["user_id" => $this->user->id])->orderBy("date", ICollection::DESC)->fetchPairs("id", null);
 	}
 
+	/**
+	 * Zapíše do db a vyřídí přidání hotového obchodu
+	 * @param $values
+	 * @return \Nextras\Orm\Entity\IEntity
+	 */
 	public function addDoneTrade($values)
 	{
 
 		$image = "";
-		switch ($values->ticker) {
+		switch ($values->ticker) { // získá vybraný ticker a jeho název obrázku pro logo
 			case "AAPL":
 				$image = "apple";
 				break;
@@ -107,6 +125,7 @@ class TradeManager
 
 		$trade = new Trade();
 
+		// uloží veškeré záležitosti obchodu do ORM objektu
 		$trade->user_id = $this->user->id;
 		$trade->ticker = strtoupper($values->ticker);
 		$trade->from = DateTimeImmutable::createFromFormat("Y-m-d", $values->from);
@@ -122,19 +141,32 @@ class TradeManager
 		$trade->imageName = $image;
 		$trade->liquidityBefore = $this->getCurrentLiquidity();
 
+		// uloží do db
 		return $this->orm->persistAndFlush($trade);
 	}
 
+	/**
+	 * Vrátí všechny obchody aktuálního uživatele
+	 * @return array
+	 */
 	public function getAllTrades()
 	{
 		return $this->orm->trades->findBy(["user_id" => $this->user->id])->orderBy("from", ICollection::DESC)->fetchPairs("id", null);
 	}
 
+	/**
+	 * Vrátí poslední obchod (do přehledu)
+	 * @return array
+	 */
 	public function getLastTrade()
 	{
 		return $this->orm->trades->findBy(["user_id" => $this->user->id])->orderBy("till", ICollection::DESC)->limitBy(1)->fetchPairs("id", null);
 	}
 
+	/**
+	 * Vrátí nejlepší obchod měsíce (také přehled)
+	 * @return array
+	 */
 	public function getBestMonthlyTrade()
 	{
 		return $this->orm->trades->findBy(
@@ -156,6 +188,7 @@ class TradeManager
 	public function getMonthlyChange(bool $withDeposits = true)
 	{
 		$monthly = 0;
+		// najde všechny požadované záznamy
 		$trades = $this->orm->trades->findBy(
 			[
 				"user_id" => $this->user->id,
@@ -164,13 +197,13 @@ class TradeManager
 
 			]
 		)->fetchPairs("id", "profitLoss");
-		if ($trades != null) {
+		if ($trades != null) { // pokud něco najde
 			foreach ($trades as $trade) {
-				$monthly += $trade;
+				$monthly += $trade; // spočítá se
 			}
 		}
 
-		if ($withDeposits) {
+		if ($withDeposits) { // pokud se počítá i s výběry a vklady, připočtou se
 			$deposits = $this->orm->deposits->findBy(
 				[
 					"user_id" => $this->user->id,

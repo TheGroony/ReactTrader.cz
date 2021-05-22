@@ -18,6 +18,7 @@ class User extends Entity {
 	const ROLE_WAITING = "waiting";
 	const ROLE_VERIFIED = "verified";
 
+	// role pro přístup do aplikace
 	const ROLES = [
 		self::ROLE_WAITING => "Registrace čekající na vyřízení",
 		self::ROLE_VERIFIED => "Ověřený uživatel",

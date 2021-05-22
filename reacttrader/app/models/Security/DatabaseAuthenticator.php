@@ -12,7 +12,7 @@ use Nette\Security\SimpleIdentity;
 use Nette\SmartObject;
 use Nette\Security as NS;
 
-class DatabaseAuthenticator implements Authenticator
+class DatabaseAuthenticator implements Authenticator // Třída ověřující uživatele, zajišťuje login a registraci
 {
 	use SmartObject;
 	/** @var Orm */
@@ -22,6 +22,7 @@ class DatabaseAuthenticator implements Authenticator
 		$this->orm = $orm;
 	}
 
+	// login checknutí
 	public function authenticate(string $email, string $password): SimpleIdentity
 	{
 

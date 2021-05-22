@@ -11,7 +11,7 @@ use App\Components\Forms\IDoneTradeFormFactory;
 use App\Models\ResourcesManager;
 use App\Models\TradeManager;
 
-class TradesPresenter extends BasePresenter
+class TradesPresenter extends BasePresenter // Presenter stránky s obchody
 {
 	/**
 	 * @var IDoneTradeFormFactory
@@ -37,16 +37,19 @@ class TradesPresenter extends BasePresenter
 	 */
 	public $tradeManager;
 
+	// render šablony a hození potřebných proměnných
 	public function renderDefault() {
 		$this->template->trades = $this->tradeManager->getAllTrades();
 		$this->template->stocks = $this->resourcesManager->fetchAllStocks();
 		bdump($this->resourcesManager->fetchAllStocks());
 	}
 
+	// komponenta formuláře pro zadání obchodu
 	public function createComponentDoneTradeForm(): DoneTradeForm {
 		return $this->doneTradeFormFactory->create();
 	}
 
+	// komponenta formuláře pro zadání výběru či vkladu (JS swich na frontendu)
 	public function createComponentAccountDepositForm(): AccountDepositForm {
 		return $this->accountDepositFormFactory->create();
 	}

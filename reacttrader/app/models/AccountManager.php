@@ -8,7 +8,7 @@ use App\Orm\Orm;
 use Nette;
 use Nextras\Dbal\Utils\DateTimeImmutable;
 
-class AccountManager
+class AccountManager // Model pro práci s účty
 {
 	/** @var Orm */
 	protected $orm;
@@ -22,7 +22,7 @@ class AccountManager
 		$this->user = $user;
 	}
 
-
+	// funkce vrátí aktuálně přihlášeného uživatele
 	public function getCurrentUser() {
 		return $this->orm->users->getById($this->user->id);
 	}
