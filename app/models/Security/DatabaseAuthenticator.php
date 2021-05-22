@@ -18,8 +18,12 @@ class DatabaseAuthenticator implements Authenticator // Třída ověřující u�
 	/** @var Orm */
 	protected $orm;
 
-	public function __construct(Orm $orm) {
+	/** @var Passwords */
+	private $passwords;
+
+	public function __construct(Orm $orm, Passwords $passwords) {
 		$this->orm = $orm;
+		$this->passwords = $passwords;
 	}
 
 	// login checknutí
@@ -31,9 +35,10 @@ class DatabaseAuthenticator implements Authenticator // Třída ověřující u�
 		if(!$row) {
 			throw new NS\AuthenticationException('Uživatel nebyl nalezen.');
 		}
-		if(!NS\Passwords::verify($password, $row->password)) {
+		if(!$this->passwords->verify($password, $row->password)) {
 			throw new NS\AuthenticationException('Bylo zadáno špatné heslo.');
 		}
+
 		if($row->role == User::ROLE_WAITING) {
 			throw new NS\AuthenticationException("Uživatel zatím není ověřený a nemá tak přístup k aplikaci");
 		}
