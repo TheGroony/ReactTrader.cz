@@ -11,7 +11,7 @@
                         {foreach $stocks as $stock}
                             <label for="{$stock->nazev}">
                                 <input type="radio" name="stock" id="{$stock->nazev}" class="stockClass" data-ticker="{$stock->ticker}">
-                                <img src="{$basePath}{$stock->img_src}" alt="">
+                                <img src="{$basePath}{$stock->img}" alt="">
                             </label>
                         {/foreach}
                     </div>

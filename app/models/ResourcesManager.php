@@ -4,18 +4,20 @@
 namespace App\Models;
 
 
-use Nette\Database\Explorer;
+use App\Orm\Orm;
 
 class ResourcesManager // model pro práci s dostupnými instrumenty
 {
-	private $database;
 
-	public function __construct(Explorer $database) {
-		$this->database = $database;
+	/** @var Orm */
+	protected $orm;
+
+	public function __construct(Orm $orm) {
+		$this->orm = $orm;
 	}
 
 	// vrátí všechny dostupné akcie z db
 	public function fetchAllStocks() {
-		return $this->database->table("stocks");
+		return $this->orm->stocks->findAll()->fetchPairs("id", null);
 	}
 }
