@@ -87,8 +87,8 @@
                                 <td>{if $trade->closingIv != null}{$trade->closingIv / 100}{else}-{/if}</td>
                                 <td>{if $trade->closingIv != null}{$trade->closingIv}{else}-{/if}</td>
                                 <td>{$trade->maxProfit}/{$trade->maxLoss}</td>
-                                <td>{if $trade->profitLoss != 0}<span class="{if $trade->profitLoss > 0}winpl{else}lossColor{/if}">{$trade->profitLoss} $</span>{else}-{/if}</td>
-                                <td>{if $trade->profitLoss != 0  && $trade->liquidityBefore != 0}<span class="{if $trade->profitLoss > 0}winpl{else}losspl{/if}">{number_format(($trade->profitLoss/$trade->liquidityBefore)*100, 2, ".", "")} %</span>{else}-{/if}</td>
+                                <td>{if $trade->profitLoss != 0}<span class="{if $trade->profitLoss > 0}winColor{else}lossColor{/if}">{$trade->profitLoss} $</span>{else}-{/if}</td>
+                                <td>{if $trade->profitLoss != 0  && $trade->liquidityBefore != 0}<span class="{if $trade->profitLoss > 0}winColor{else}lossColor{/if}">{number_format(($trade->profitLoss/$trade->liquidityBefore)*100, 2, ".", "")} %</span>{else}-{/if}</td>
                             </tr>
                         {/foreach}
                         </tbody>
