@@ -61,7 +61,7 @@ class DatabaseAuthenticator implements Authenticator // Třída ověřující u�
 
 		$user->name = $name;
 		$user->email = $email;
-		$user->password = Passwords::hash($password);
+		$user->password = $this->passwords->hash($password);
 		$user->role = USER::ROLE_WAITING;
 
 		return $this->orm->persistAndFlush($user);
