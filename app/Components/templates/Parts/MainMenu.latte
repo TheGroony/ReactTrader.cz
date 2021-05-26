@@ -16,13 +16,13 @@
                 <h2>{$account->name}</h2>
                 <div class="left">
                     <h3>{$liquidity} $</h3>
-                    <p style="color:{if $monthlyChange > 0}limegreen{else}#C90000{/if}">{if $monthlyChange > 0}+ {else}- {/if}{$monthlyChange} $</p>
-                    <p style="color:{if $annualChange > 0}limegreen{else}#C90000{/if}">{if $annualChange > 0}+ {else}- {/if}{$annualChange} $</p>
+                    <p style="color:{if $monthlyChange > 0}limegreen{else}#C90000{/if}">{if $monthlyChange > 0}+{/if}{$monthlyChange} $</p>
+                    <p style="color:{if $annualChange > 0}limegreen{else}#C90000{/if}">{if $annualChange > 0}+{/if}{$annualChange} $</p>
                 </div>
                 <div class="right">
                     <h4>(obchody)</h4>
-                    <h4 style="color:{if $monthlyChangeTrades > 0}limegreen{else}#C90000{/if}">{if $monthlyChangeTrades > 0}+ {else}- {/if}{$monthlyChangeTrades} $</h4>
-                    <h4 style="color:{if $annualChangeTrades > 0}limegreen{else}#C90000{/if}">{if $annualChangeTrades > 0}+ {else}- {/if}{$annualChangeTrades} $</h4>
+                    <h4 style="color:{if $monthlyChangeTrades > 0}limegreen{else}#C90000{/if}">{if $monthlyChangeTrades > 0}+{/if}{$monthlyChangeTrades} $</h4>
+                    <h4 style="color:{if $annualChangeTrades > 0}limegreen{else}#C90000{/if}">{if $annualChangeTrades > 0}+{/if}{$annualChangeTrades} $</h4>
                 </div>
                 <div class="button">
                     {control logoutForm}
