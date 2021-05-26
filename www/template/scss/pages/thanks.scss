@@ -1,0 +1,39 @@
+$bg-thanks-desktop: "../assets/mainpage-bg-desktop.png";
+$bg-thanks-mobile: "../assets/mainpage-bg-mobile.png";
+
+@media only screen and (max-width: 600px) {
+
+}
+
+@media only screen and (min-width: 600px) {
+  .thanks {
+    //height: auto;
+    background-image: url($bg-thanks-desktop);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    header {
+      h1 {
+        color: white;
+        padding: 5rem;
+        margin: 5rem;
+        font-weight: bold;
+      }
+    }
+    main {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-items: center;
+      p, a {
+        color: white;
+        padding: 1rem;
+        display: block;
+      }
+    }
+  }
+}

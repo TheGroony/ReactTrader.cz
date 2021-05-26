@@ -1,15 +1,9 @@
 parameters:
 
-
-database:
-	dsn: 'mysql:host=127.0.0.1;dbname=resources'
-	user: groony
-	password: Develdevel007
-
 nextras.dbal:
     driver: mysqli
     host: localhost
     username: groony
-    password: Develdevel007
+    password: Devel007
     database: reacttrader
     connectionTz: auto-offset

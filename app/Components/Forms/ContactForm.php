@@ -53,7 +53,7 @@ class ContactForm extends BasicForm // Komponenta kontaktního formuláře na HP
 
 			$mailer = new Nette\Mail\SendmailMailer;
 			$mailer->send($mail);
-			$this->onSuccess($mailer);
+			$this->presenter->redirect("Thanks:default");
 		} catch (\Exception $exception) {
 			$this->onError($exception);
 		}

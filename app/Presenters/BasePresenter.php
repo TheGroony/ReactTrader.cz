@@ -45,7 +45,9 @@ class BasePresenter extends Presenter // Hlavní basePresenter, od kterého děd
 
 		if (!$this->user->isLoggedIn() && !$this->isLinkCurrent("Login:default")) { // pokud uživatel není přihlášený a pokusí se dostat někam jinak, dostane redirect
 			if (!$this->isLinkCurrent("Homepage:default")) {
-				$this->redirect("Login:default");
+				if(!$this->isLinkCurrent("Thanks:default")) {
+					$this->redirect("Login:default");
+				}
 			}
 		}
 
